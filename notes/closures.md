@@ -22,10 +22,15 @@
        - If no block is passed - **yield will throw a `LocalJumpError`**
      - Blocks can take arguments like methods - but is not as strict with the amount of arguments passed
      - `return` from a block defined in `main` (the top level of the program) will result in `LocalJumpError` as we can't return from the top level of a program.
-  2. **Proc** object
+     - The shorthand syntax `&some_proc` *converts* a proc to a block
+       - First Ruby will check to see if what follows `&` is indeed a proc
+         - If not Ruby will call `to_proc` on the object and then convert it to a block
+       - Another useful shorthand syntax Ruby provides is the `&:some_symbol`
+         - This will first call `Symbol#to_proc` on `:some_symbol`
+         - Then `&` will convert the `proc` to a block 
+  2. **Proc** objects
      * A proc **is a block wrapped in a Proc** object and **acts like a block** (see block def)
      * Can be instatiated with `Proc.new { code here }` or `Kernel#proc { code here }`
-     * The short hand syntax `&:some_symbol`  inside a method definition
        * The `&` will try to convert what follows into a block
        * If it can't `:some_symbol` will be called `Symbol#sym_to_proc` on and then `&` will convert the proc into a block
      * `return` from a Proc has the same behavior as a block (see block)
