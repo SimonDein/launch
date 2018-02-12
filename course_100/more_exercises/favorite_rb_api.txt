@@ -1,0 +1,11 @@
+
+
+After looking over every ruby API covering the base classes, modules and their respective methods, i could find - i personally prefer the ruby-dog.org documentation project.
+
+I found most the documentation on other sites quite confusing, unintuitive, poorly organised and at times lacking a lot of information - compared to documentation at ruby-docs.org.
+
+The Core API at ruby-doc.org gives a clear and simple, yet deep enough description of the elements along with good examples in my opinion.
+The interface is intuitive and gives a great overview of the methods available to the different modules and classes. Simply put - the structure of the documentation is better than anything else i could find.
+One of the things that i found especially useful is the quick overview of what methods returns and what parameters and options they have.
+
+I've used ruby-doc.org since it first was introduced in the curriculum, and the way they have organised their documentaion has made it so easy and fast to quickly look up that method return value that you thought you could remember - but apparently couldn't...

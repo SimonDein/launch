@@ -1,0 +1,19 @@
+
+validate_num_error: "A valid entry is: any positive number - try again:"
+
+want_to_use_again: "Would you like to do another calculation? (Enter 'Y' to continue)"
+
+goodbye: "Thank you for using the calculator. Good bye!"
+
+instructions: |
+  "HOW THE CALCULATOR WORKS:
+  1) You'll be prompted to enter two numbers - NOTE: all numbers must be positive and bigger than 0
+  2) Choose the operation: add, subtract, multiply or divide
+  3) The result is printed"
+
+op_instructions: |
+  "Please enter one of the following operations (in all lowercase):
+  add
+  subtract
+  multiply
+  divide"

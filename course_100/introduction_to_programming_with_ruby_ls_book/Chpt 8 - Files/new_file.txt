@@ -1,0 +1,2 @@
+One more example of writing to a file from irb with puts
+HeyAnother line from irb
