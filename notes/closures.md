@@ -1,5 +1,7 @@
 #  Closures in Ruby
 
+***See course 130 material and exercises for more information***
+
 ### Overview
 
 * A closure is an unnamed "chunk of code" that binds it's sorrounding artifacts to be executed at a later time
@@ -45,7 +47,7 @@
 
 
 
-## Summary:
+## Summary
 
 - blocks are just one way Ruby implements closures. Procs and lambdas are others.
 - closures drag their surrounding context/environment around, and this is at the core of how variable scope works.
