@@ -1,10 +1,17 @@
+my_proc = proc { return}
 
-def first_level
-  my_proc = proc { return }
-  second_level(my_proc)
-  puts "will this show?"
+def method_1(proc)
+  method_2
+  puts "will this print"
+  proc.call
 end
 
-def second_level(my_proc)
-  my_proc.call
+def method_2
+  a_proc = proc do
+    puts "yo"
+    return
+  end
+  a_proc.call
 end
+
+method_1(my_proc)
