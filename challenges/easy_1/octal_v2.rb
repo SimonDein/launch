@@ -11,7 +11,7 @@ class Octal
   attr_reader :octal
   
   def initialize(input)
-    @octal = input.match(/\D|[89]/) ? '0' : input # set @octal to 0 if input is invalid
+    @octal = input =~ /\D|[89]/ ? '0' : input # set @octal to 0 if input is invalid
   end
   
   def to_decimal
