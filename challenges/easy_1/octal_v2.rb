@@ -7,6 +7,7 @@ Return the base8 string as base_10 integer
 =end
 
 class Octal
+  BASE = 8
   attr_reader :octal
   
   def initialize(input)
@@ -15,7 +16,7 @@ class Octal
   
   def to_decimal
     octal.reverse.each_char.with_index.reduce(0) do |accumulator, (number, index)|
-      accumulator + (number.to_i * (8 ** index))
+      accumulator + (number.to_i * (BASE ** index))
     end
   end
 end
