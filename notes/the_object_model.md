@@ -1,4 +1,4 @@
-## The Object Model
+# The Object Model
 
 - **Object Oriented Programming** is a programming paradigm that involves grouping and encapsulation of code and function.
   - Encapsulation sets boundries for "what can effect what" and basically defines confined space which makes for a safer development.
@@ -11,7 +11,7 @@
 
 - **Classes** and **modules**
   - **Classes are template definitions** of methods, variables and of how to instantiate objects
-    - In Ruby everything is an object - i.e. an instance of a class (an instance of a class is an object)
+    - In Ruby everything is an object - i.e. **an instance of a class** (an instance of a class is an object)
     - Use the `Obj#class` method to have the recieving object's class returned.
   - **Modules are groupings of common functions/methods** which can be "mixed in" to a class using the `include` keyword
     - Modules **only** provide **functions/methods** and therefore no objects can be instantiated by a module.
@@ -21,6 +21,9 @@
 - **Inheritance** is used in Ruby
   - A subclass inherits from a superclass
   - Inheritance allows for more generic superclasses for large reusability and smaller subclasses for finer detailed and intricate operations.
+  - A class can only subclass from a single super class
+    - This is called single inheritance
+    - Ruby gets around this and **supports multiple inheritance by implementing `modules`**
 
 
 

@@ -4,7 +4,7 @@
 
 
 
-**Steps before coding:**
+### Steps before coding
 
 - Understand the problem
 
@@ -12,54 +12,50 @@
   - Describe **any possible inputs**, what exactly needs to be **output** and data structeres used.
     - You're done when you have a well defined input / output and you're not in doubt about any details regarding the problem.
 
-  ​
+### Set up your examples and test cases
 
-- Set up your examples and test cases
-
-  - Test cases **helps to understand** the problem and **verify** your solution
-    - Start with a basic test case
-    - Make test cases **based on edge cases**
-    - Focus on the input
-    - Emptiness? (Nil/null, "", [], {})
-    - Ask questions to verify your understanding
-
-  ​
-
-- Data Structes
-
-  - Choose how you want to represent the input
-    - String?
-      - Do we want to concat, strip reverse etc. ?
-      - Regular expressions! split, replace, match...
-    - Array?
-      - Need to walk through it? (iteration)
-      - Need index?
-      - Do we want abstractions?
-        - map
-        - reduce
-        - select / filter
-        - all?
-        - ...
-    - Hash?
-      - Do i want a look up table / dictionary ?
-    - Number?
-      - Do we need math operations?
-      - Number as a string can have advantages over numbers
+- Test cases **helps to understand** the problem and **verify** your solution
+  - Start with a basic test case
+  - Make test cases **based on edge cases**
+  - Focus on the input
+  - Emptiness? (Nil/null, "", [], {})
+  - Ask questions to verify your understanding
 
 
 
-- Algorithm
-  - Algorithms have to be described in the language of the chose data structure!
-    - The reason being that if you already chose a data structure to represent your data - the algorithm for solving the problem is almost going to write itself (example: We represent the input data as an array - then we immediately know which methods and operations we have available operate on the input - like map, reduce etc...)
-  - You have to be really fluent with
-    - String / Regex
-    - Array
-      - Ruby: Enumerable
-    - Hash
-      - Creation (default values)
-      - Access (default values)
-      - Iteration
+### Data Structures
 
+- Choose how you want to represent the input
+  - String?
+    - Do we want to concat, strip reverse etc. ?
+    - Regular expressions! split, replace, match...
+  - Array?
+    - Need to walk through it? (iteration)
+    - Need index?
+    - Do we want abstractions?
+      - map
+      - reduce
+      - select / filter
+      - all?
+      - ...
+  - Hash?
+    - Do i want a look up table / dictionary ?
+  - Number?
+    - Do we need math operations?
+    - Number as a string can have advantages over numbers
+
+### Algorithm
+
+- Algorithms have to be described in the language of the chose data structure!
+  - The reason being that if you already chose a data structure to represent your data - the algorithm for solving the problem is almost going to write itself (example: We represent the input data as an array - then we immediately know which methods and operations we have available operate on the input - like map, reduce etc...)
+- You have to be really fluent with
+  - String / Regex
+  - Array
+    - Ruby: Enumerable
+  - Hash
+    - Creation (default values)
+    - Access (default values)
+    - Iteration
 
 
 > You'll know you're doing things the right way when you find yourself spending more time getting ready to code than you actually spend coding. (That won't be true all the time, but if your preparation is thorough, the code almost writes itself.)
@@ -165,7 +161,7 @@ Algorithm:
 		- y * " " + x * "*"
 ```
 
-> Example of breaking down a problem where the requirements are not very specific - here the examples are the main description of what the code should do - not the description. Therefore examples needs to be described in computational words (see "model the problem" above)
+> Example of breaking down a problem where the requirements are not very specific - here the **examples are the main description** of what the code should do - not the description itself. Therefore examples needs to be described in computational words (see "model the problem" above)
 
 
 
@@ -262,7 +258,7 @@ Algorithm:
 
 
 
-### Summary
+## Summary of Breaking Down a Problem
 
 - Understand the problem
   - Input
@@ -271,6 +267,7 @@ Algorithm:
     - Definitions / concepts / facts you need to know to be able to solve the problem
 - Test cases
   - Edge cases
+  - Test suite?
 - Choose data structures
   - What data structure do you want your input to be
     - Think about the advantages / disadvantages of a data structure relating to solving your problem

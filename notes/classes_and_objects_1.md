@@ -1,4 +1,4 @@
-## Classes and Objects I
+# Classes and Objects I
 
 * Class
   * State
