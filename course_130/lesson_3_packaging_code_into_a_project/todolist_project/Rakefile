@@ -1,0 +1,39 @@
+require 'rake/testtask'
+require 'find'
+require 'bundler/gem_tasks'
+
+desc 'Run tests'
+task :default => [:test]
+
+desc 'Say hello'
+task :hello do
+  puts "Hello there. This is the 'hello' task"
+end
+
+Rake::TestTask.new(:test) do |t|
+  t.libs << "test"
+  t.libs << "lib"
+  t.test_files = FileList['test/**/*_test.rb']
+end
+
+desc "List all 'shown' files in project"
+task :list do
+  num_of_files = 0
+  Find.find('.') do |file|
+    next if file.start_with?('./.') || file == '.'
+    puts file
+    num_of_files += 1
+  end
+  puts "Number of 'shown' files in project: #{num_of_files}"
+end
+
+desc 'List all files in project (including hidden)'
+task :list_all do
+  num_of_files = 0
+  Find.find('.') do |file|
+    next if file == '.'
+    puts file
+    num_of_files += 1
+  end
+  puts "Number of files in project files: #{num_of_files}"
+end

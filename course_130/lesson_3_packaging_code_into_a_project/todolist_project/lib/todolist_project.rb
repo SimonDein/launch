@@ -1,3 +1,9 @@
+# Clears $LOAD_PATH and replaces it with the path to specific gem versions
+# specified in the Gemfile.lock
+require 'bundler/setup'
+require 'date'
+require 'stamp'
+
 # This class represents a todo item and its associated
 # data: name and description. There's also a "done"
 # flag to show whether this todo item is done.
@@ -6,7 +12,7 @@ class Todo
   DONE_MARKER = 'X'
   UNDONE_MARKER = ' '
 
-  attr_accessor :title, :description, :done
+  attr_accessor :title, :description, :done, :due_date
 
   def initialize(title, description='')
     @title = title
@@ -27,7 +33,10 @@ class Todo
   end
 
   def to_s
-    "[#{done? ? DONE_MARKER : UNDONE_MARKER}] #{title}"
+    # "[#{done? ? DONE_MARKER : UNDONE_MARKER}] #{title} #{due_date}"
+    result = "[#{done? ? DONE_MARKER : UNDONE_MARKER}] #{title}"
+    result += due_date.stamp(' (Due: Friday January 6)') if due_date
+    result
   end
 end
 
