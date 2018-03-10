@@ -61,7 +61,6 @@ class PhraseTest < Minitest::Test
   end
 
   def test_normalize_case
-    skip
     phrase = Phrase.new('go Go GO')
     counts = { 'go' => 3 }
     assert_equal counts, phrase.word_count
@@ -69,7 +68,6 @@ class PhraseTest < Minitest::Test
 
 
   def test_with_apostrophes
-    skip
     phrase = Phrase.new("First: don't laugh. Then: don't cry.")
     counts = {
       'first' => 1, "don't" => 2, 'laugh' => 1,
@@ -79,7 +77,6 @@ class PhraseTest < Minitest::Test
   end
 
   def test_with_quotations
-    skip
     phrase = Phrase.new("Joe can't tell between 'large' and large.")
     counts = {
       'joe' => 1, "can't" => 1, 'tell' => 1,

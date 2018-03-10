@@ -36,12 +36,10 @@ Then remove duplications and return"Joe can't tell between 'large' and large."
 
 class Phrase
   def initialize(input)
-    @words = input.downcase.split.map do |word|
-      word.gsub(/(^'|\W+$)/, '') # remove all unwanted characters
-    end.reject { |word| word == ''} # remove resulting empty strings from array
+    @words = input.downcase.scan(/\b[\w']+\b/)
   end
 
   def word_count
-    @words.map { |word1| [word1, @words.count { |word2| word1 == word2}] }.uniq.to_h
+    @words.each_with_object(Hash.new(0) ) { |word, word_count| word_count[word] += 1}
   end
 end
