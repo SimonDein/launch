@@ -36,7 +36,7 @@ Then remove duplications and return"Joe can't tell between 'large' and large."
 
 class Phrase
   def initialize(input)
-    @words = input.downcase.scan(/\b[\w']+\b/)
+    @words = input.downcase.scan(/\b[\w']+\b/) # return an array
   end
 
   def word_count
