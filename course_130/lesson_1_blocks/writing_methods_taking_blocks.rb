@@ -1,5 +1,5 @@
 # In Ruby all methods can take a block - though nothing will happen
-# unless you yield to the block:
+# unless you yield or call to the block:
 def hello
   "hello"
 end
@@ -16,6 +16,11 @@ hello { puts "yo"}
 # yo
 # => hello
 
+def hello(&block)
+  block.call
+end
+
+hello { puts 'yo' }
 
 # Here we yield to the block on line 22 - then execute the rest of the method
 def say(words)
