@@ -1,5 +1,7 @@
 =begin
-Derives from roll.rb
+Derives from roll_with_html.rb
+
+Simple emulation of state using "crafted" url's
 =end
 
 require 'socket'

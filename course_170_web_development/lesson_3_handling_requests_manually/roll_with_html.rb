@@ -1,5 +1,7 @@
 =begin
 Derives from roll.rb
+
+Added html for proper parsing by the client
 =end
 
 require 'socket'
