@@ -9,7 +9,7 @@ It's a protocol, a set of rules, for how two devices can exchange data - or rath
 
 ###Overview
 
-The internet is at the end of the day just computers connected to one another. When enter an URL into the adress bar in your browser - your computer (or rather - browser) will act as the **client** sending a *request*  to another computer acting as a **server**. The server will look at the request and, if the request is valid, then send a *response* back to the client (your computer).
+The internet is at the end of the day just computers connected to one another. When you enter an URL into the adress bar in your browser - your computer (or rather - browser) will act as the **client** sending a *request*  to another computer acting as a **server**. The server will look at the request and, process it and then send a *response* back to the client (your computer).
 
 **HTTP sets the rules for *how*** a device should send a request, and for *h*ow a response should be sent back. It's basically an agreement on a set of rules of how machines communicate with each other.
 
@@ -31,7 +31,7 @@ A request must contain certain details - while others are optional:
 * Must consist of the **host** (since HTTP 1.1), a **path** and **method**
   * Host consist of the domain name (google.com)
   * Path is the path the file requested (…/index.html)
-  * Method is the method by which we want to connect with the server (GET / POST)
+  * Method is the method by which we want to connect with the server (GET / POST / DELETE etc.)
 * Can **also** consist of **parameters**, **header** and a **body**
 
 ### Request Methods

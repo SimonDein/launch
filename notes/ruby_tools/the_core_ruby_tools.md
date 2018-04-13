@@ -37,7 +37,7 @@
     - A dependancy manager like bundler makes it very easy to work on several projects with different dependancies and specifications on the same system (computer).
     - Bundler takes care of removing every gem and gem version from `$LOAD_PATH` and only **loads the specified dependancies to avoid conflicts**.
     - Dependancies are defined in a `Gemfile` and calling `bundle install` will install any missing gems and dependancies and produce a `Gemfile.lock`
-    - Bundler uses the `Gemfile.lock` to load the correct gems, and versions thereof, for the program (see bullet point 2)
+      - Bundler uses the `Gemfile.lock` to load the correct gems, ruby and versions thereof, for the program (see bullet point 2)
 
 - #### Task Management and Build Automation
 
