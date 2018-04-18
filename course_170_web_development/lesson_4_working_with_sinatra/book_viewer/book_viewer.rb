@@ -29,28 +29,43 @@ get "/chapter/:number" do
 end
 
 get "/search" do
-  @query = params[:query]
-  @search_result = search(@query) if @query
+  @query = params['query']
+  @search_result = nil
+  @search_result = chapters_matching(@query) if @query
 
   erb :search
 end
 
 helpers do
   def in_paragraphs(text)
-    text.each_line('').map do |line|
-      "<p>#{line}</p>"
+    text.each_line('').map.with_index do |line, index|
+      "<p id='#{index}'>#{line}</p>"
     end.join()
   end
+
+  # Iterates every chapter - yielding the name, number and text of it.
+  def each_chapter
+    @contents.each_with_index do |name, index|
+      number = (index + 1).to_s
+      text = File.read('data/chp' + number + '.txt')
+      yield name, number, text
+    end
+  end
   
-  def search(query)
+  # Returns an array of Hashes.
+  # Each hash represents a chapter - containing the name, number and matched paragraphs of that chapter.
+  def chapters_matching(query)
     result = []
 
-    @contents.each_with_index do |chapter_name, index|
-      chapter_number = (index + 1).to_s
-      text = File.read('data/chp' + chapter_number + '.txt').downcase
-
-      result << [chapter_name, chapter_number] if text.include?(query)
+    each_chapter do |name, number, text|
+      if text.downcase.include?(query.downcase)
+        matches = {}
+        text.each_line('').with_index do |paragraph, paragraph_number|
+          matches[:paragraph_number] = paragraph if paragraph.downcase.include?(query.downcase)
+        end
+        result << {name: name, number: number, paragraphs: matches}
+      end
     end
-    result.empty? ? nil : result
+    result
   end
 end
