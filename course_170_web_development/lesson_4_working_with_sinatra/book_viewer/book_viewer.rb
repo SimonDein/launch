@@ -1,6 +1,10 @@
 require 'tilt/erubis'
 require "sinatra"
-require "sinatra/reloader"
+require "sinatra/reloader" if development?
+
+configure do
+  set :server, :puma
+end
 
 before do
   @contents = File.readlines('data/toc.txt')

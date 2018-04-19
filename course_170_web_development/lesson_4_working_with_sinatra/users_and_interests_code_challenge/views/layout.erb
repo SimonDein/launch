@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+<head>
+  <title>Users and Interests</title>
+  <link rel="stylesheet" href="/stylesheets/users_and_interests.css">
+</head>
+
+<body>
+  <%= yield %>
+  
+  <span><i>There are <%= @users_overview[:users] %> users with a total of <%= @users_overview[:interests] %> interests</i></span>
+</body>
+</html>

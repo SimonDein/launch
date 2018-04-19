@@ -1,0 +1,13 @@
+<h1>User Information</h1>
+<h3><%= @name.capitalize %></h3>
+<p>Email: <%= @email %></p>
+<p>Interests: <%= @interests %> </p>
+
+<h2>Other Users</h2>
+<ul>
+  <% @users.each do |name, information| %>
+    <% next if name == @name.to_sym %>
+    <li><a href="<%= name %>"><%= name.capitalize %></a></li>
+  <% end %>
+</ul>
+<p><a href="/">Go back to overview</a></p>
