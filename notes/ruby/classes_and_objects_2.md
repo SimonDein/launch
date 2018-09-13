@@ -8,7 +8,7 @@
     def Dog
      # Class variable
       
-      def self.total_dogs
+      def self.what_am_i
         "A dog"
       end
     end

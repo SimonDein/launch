@@ -5,11 +5,11 @@
 > HTTP is the standardized protocol used to transmit data over the world wide web.
 >
 
-It's a protocol, a set of rules, for how two devices can exchange data - or rather **request** and **respond** (send) data.
+It's a protocol, a set of rules, for a request-response between a clientt and a server.
 
 ###Overview
 
-The internet is at the end of the day just computers connected to one another. When you enter an URL into the adress bar in your browser - your computer (or rather - browser) will act as the **client** sending a *request*  to another computer acting as a **server**. The server will look at the request and, process it and then send a *response* back to the client (your computer).
+The internet is at the end of the day just computers connected to one another. When yours enter an URL into the adress bar in your browser - your computer (or rather - browser) will act as the **client** sending a *request*  to another computer acting as a **server**. The server will look at the request and, process it and then send a *response* back to the client (your computer).
 
 **HTTP sets the rules for *how*** a device should send a request, and for *h*ow a response should be sent back. It's basically an agreement on a set of rules of how machines communicate with each other.
 
@@ -23,7 +23,52 @@ The operation taking place is called a **"request-response cycle"**.
 
 HTTP is strictly a **text-based protocol** (Meaning requests and responses can be read by humans)
 
-A request must contain certain details - while others are optional:
+A request must contain certain details - while others are optional.
+
+A request can have three sections. Where the first two are obligatory:
+
+1. The first line contains the request method followed by it's parameters:
+
+```text
+GET /about HTTP/1.1 (method, path or domain name, http protocol version)
+```
+
+2. The subsequent lines represent a HTTP header, giving the server information about what type of data is appropriate (eg. language, type of document etc.). These HTTP headers form a block and ends with an empty line:
+
+```text
+Host: developer.mozilla.org
+Accept-Language: fr
+ 
+```
+
+3. The final block is an optional data block, which usually is used by the `POST` method to send user input from fx. a form to the server. This data block is usually used to send sensitive data not appropritate for sending directly in the URL as it can easily be read(though it also can be easily read from the data block!):
+
+```text
+user_name=JohnDoe&password=letmein
+```
+
+
+
+*An example of a http request **without** the optional data block:*
+
+```text
+GET / HTTP/1.1			 	<- 1st block: Method, path, http protocol version
+Host: developer.mozilla.org <- 2nd block: Headers (must contain 'host' since http 1.1)
+Accept-Language: fr			<- More headers
+                          	<- extra empty line tells the server that this is the end of 								the headers block. Anything after this would be in the 3rd 								  block - the data block.
+```
+
+*And example of a http request **with** all three blocks:*
+
+```text
+GET / HTTP/1.1			 	  <- 1st block: Method, path, http protocol version
+Host: developer.mozilla.org   <- 2nd block: Headers (must contain 'host' since http 1.1)
+Accept-Language: fr
+                          	  <- Empty line separates headers block from th data block.
+name=JohnDoe&password=letmein <- 3rd block: data send to the server (usually from a form)
+```
+
+
 
 * Implicitly contains the protocol (fx. HTTP/1.1.)
 

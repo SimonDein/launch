@@ -35,7 +35,9 @@
   - ##### Bundler
 
     - A dependancy manager like bundler makes it very easy to work on several projects with different dependancies and specifications on the same system (computer).
-    - Bundler takes care of removing every gem and gem version from `$LOAD_PATH` and only **loads the specified dependancies to avoid conflicts**.
+    - You will need to set up bundler before trying to require any gems. At the top of the first file that your application loads (for Sinatra, the file that calls `require 'sinatra'`)
+      - You do that by `require 'bundler/setup'`
+        - Bundler then takes care of removing every gem and gem version from `$LOAD_PATH` and only **loads the specified dependancies to avoid conflicts** only looking at the `Gemfile.lock`
     - Dependancies are defined in a `Gemfile` and calling `bundle install` will install any missing gems and dependancies and produce a `Gemfile.lock`
       - Bundler uses the `Gemfile.lock` to load the correct gems, ruby and versions thereof, for the program (see bullet point 2)
 
