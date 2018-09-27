@@ -1,0 +1,9 @@
+Does the following statement use the DDL or DML component of SQL?
+
+UPDATE things
+SET material = 'plastic'
+WHERE item = 'Cup';
+
+
+Answer:
+DML - The statement alters data in the database and not the structure or the definition of the database or table.

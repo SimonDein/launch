@@ -1,0 +1,8 @@
+Does the following statement use the DDL or DML component of SQL?
+
+CREATE SEQUENCE part_number_sequence;
+
+Answer:
+DDL - The statement defines a sequence that is part of the definition of the database.
+But it could be argued that in doing so the DDL statement inderectly defines data that will be inserted into the data base.
+All things considered the statement in itself is DDL.

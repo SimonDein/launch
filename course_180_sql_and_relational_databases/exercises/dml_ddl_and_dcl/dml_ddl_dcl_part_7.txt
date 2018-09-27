@@ -1,0 +1,6 @@
+Does the following statement use the DDL, DML, or DCL component of SQL?
+
+\d things
+
+Answer:
+The statement is a meta command of psql for describing a table and doesn't manipulate data, structure or definition of the database.

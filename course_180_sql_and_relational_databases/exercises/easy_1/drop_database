@@ -1,0 +1,14 @@
+Let's finish things up by dropping the database animals. With no tables in it, we don't have much use for it any more. Write a SQL statement or PostgreSQL command to drop the animals database.
+
+DROP DATABASE animals;
+
+
+CREATE TABLE tools (
+id serial PRIMARY KEY,
+name varchar(100) NOT NULL,
+cost numeric(7, 2) NOT NULL,
+price numeric (7,2) NOT NULL,
+stock integer NOT NULL,
+discount numeric (7,2) DEFAULT 0,
+comments text
+);

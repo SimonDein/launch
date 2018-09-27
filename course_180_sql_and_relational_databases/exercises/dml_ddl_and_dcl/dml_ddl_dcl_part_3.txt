@@ -1,0 +1,11 @@
+Does the following statement use the DDL or DML component of SQL?
+
+CREATE TABLE things (
+  id serial PRIMARY KEY,
+  item text NOT NULL UNIQUE,
+  material text NOT NULL
+);
+
+Answer:
+
+DDL - The statement as it defines the creation of a new database, data types and constrictions

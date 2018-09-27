@@ -1,0 +1,8 @@
+Does the following statement use the DDL or DML component of SQL?
+
+DROP DATABASE xyzzy;
+
+
+Answer:
+DDL (and inderectly DML) - The actual statement is using the DDL of SQL - altering (in this case deleting) a database.
+But in doing so - all data in also manipulated (deleted). So inderectly the statement is also manipulating data in the database.

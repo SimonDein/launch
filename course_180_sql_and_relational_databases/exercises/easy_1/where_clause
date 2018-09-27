@@ -1,0 +1,2 @@
+SELECT * FROM birds
+WHERE birds.age < 5;
