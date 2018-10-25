@@ -1,0 +1,9 @@
+#! /usr/bin/env ruby
+# Loading gems
+require 'pry'
+
+# Include classes
+require_relative 'lib/Cli'
+
+# Run application
+ CLI.new.run(ARGV)
