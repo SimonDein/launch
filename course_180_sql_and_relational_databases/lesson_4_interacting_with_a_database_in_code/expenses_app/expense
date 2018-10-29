@@ -5,5 +5,8 @@ require 'pry'
 # Include classes
 require_relative 'lib/Cli'
 
+
+
+##### Run the program by entering ./expense in the CLI
 # Run application
  CLI.new.run(ARGV)

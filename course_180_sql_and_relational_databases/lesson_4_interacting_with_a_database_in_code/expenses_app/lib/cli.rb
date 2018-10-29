@@ -9,8 +9,6 @@ class  CLI
 
   def run(cli_arguments)
     command = cli_arguments.shift
-
-    
     
     case command
     when "add"
@@ -21,14 +19,36 @@ class  CLI
       else
         application.add_expense(amount, memo)
       end
+    when "delete"
+      expense_id = cli_arguments[0]
+      unless expense_id
+        display_delete_error
+      else
+        application.delete(expense_id)
+      end
+    when "clear"
+      application.delete_all_expenses if confirmed?
     when "list"
       application.list_expenses
+    when "search"
+      search_param = cli_arguments[0]
+      unless search_param
+        display_search_error
+      else
+        application.search(search_param)
+      end
     else
       display_help
-    end  
+    end
   end
 
   private
+
+  def confirmed?
+    puts "This will remove all expenses. Are you sure? (y/n)"
+    answer = IO.console.getch
+    answer == 'y'
+  end
 
   def display_help
     puts <<~HELP
@@ -52,5 +72,15 @@ class  CLI
   
     add 1.4 Coffee
     ADDERROR
+  end
+
+  def display_delete_error
+    puts <<~DELETEERROR
+    You must provide an id for expense you wish to delete
+
+    Example:
+
+    delete 2 - This deletes the expense with the id 2 from the list
+    DELETEERROR
   end
 end
