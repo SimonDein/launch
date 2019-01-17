@@ -1,0 +1,48 @@
+body {
+  font: italic bold 20px/2.5 Tahoma, 'Trebuchet MS', Verdana, sans-serif;
+  /* font-family: 'Tahoma', 'Trebuchet MS', Verdana, sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 2.5; */
+  text-align: justify;
+  text-indent: 4px;
+}
+
+h1 {
+  color: blue;
+  font-family: Georgia;
+}
+
+code {
+  color: green;
+  font-family: monospace;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+mark {
+  font-family: Courier, monospace;
+  font-size: 12px;
+}
+
+strong {
+  font-size: 15px;
+}
+
+em {
+  font-size: 20px;
+}
+
+a {
+  color: red;
+  text-decoration: none;
+}
+
+.article {
+  font: 14px Helvetica, Arial, sans-serif;
+}
+
+.normal {
+  font: 18px serif;
+}

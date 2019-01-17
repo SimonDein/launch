@@ -1,0 +1,23 @@
+
+
+/******* RESET END *******/
+
+body {
+  width: 800px;
+}
+
+h1 {
+  font-size: 72px;
+}
+
+p {
+  font-size: 24px;
+}
+
+.brighten {
+  color: rgb(69, 69, 69);
+}
+
+#summery {
+  text-decoration: underline; 
+}

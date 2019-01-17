@@ -1,0 +1,63 @@
+These practice problems focus on HTML and CSS that deal with text, like the font family, style, color, and size.
+
+1. Create an HTML page with a single paragraph of text. Write CSS to set the font size for most elements on the page to 20px (you may ignore headers, subscripts, and other items that often have a different size).
+
+2. Change the font family for the page from the previous problem to a sans-serif font.
+
+3. Change the CSS for the previous problem to give the browser a choice one of three fonts (Tahoma, Trebuchet MS, Verdana), depending on what is available, before it uses the default sans-serif font.
+
+4. Change the text from the previous problem to italic.
+
+5. Change the CSS from the previous problem to boldface (keep the italics).
+
+6. Change the CSS from the previous problem to increase the line height to 2.5 times its default height.
+
+7. Change the CSS from the previous problem to a shorthand form that uses precisely one property. The output should not change.
+
+8. Change the CSS from the previous problem to right-align the text within the paragraph:
+
+9. Change the CSS from the previous problem to center-align the text within the paragraph:
+
+10. Change the CSS from the previous problem to fully justify the text within the paragraph:
+
+11. Change the CSS from the previous problem to indent the start of the paragraph by 4em.
+
+12. Write the CSS needed to reproduce this screenshot:
+
+<screenshot>
+
+You should use this HTML:
+
+<article>
+  <header>
+    <h1>Finessing `feColorMatrix`</h1>
+  </header>
+  <p>
+    Harness the power of <code>feColorMatrix</code> to create detailed
+    filters, with Una Kravets as your guide.
+  </p>
+</article>
+The h1 heading uses the Georgia font while the code element uses the browser's default monospace font. The remaining text uses a 14px sans-serif font, with Helvetica and Arial preferred.
+
+13. Change the CSS from the previous problem to display the h1 element text in blue, and the code text in green.
+
+14. Write the CSS needed to reproduce this screenshot:
+
+15. Example of completed problem
+
+You should use this HTML:
+
+<p>That episode was <mark>un<strong>be<em>lieve</em></strong>able</mark>!</p>
+The font highlighted in yellow is Courier; use a backup font of monospace. The text uses four font sizes - 12px, 15px, 18px and 20px.
+
+Create some HTML with this paragraph:
+
+<p>
+  The Creating Hyperlinks section of Getting to Know HTML discusses
+  hyperlinks, or anchors. Be sure to work both "In Practice" sections; they
+  pick up from where you left off in an earlier reading assignment.
+</p>
+Convert the text Getting to Know HTML to a hypertext link to this URL:
+
+http://learn.shayhowe.com/html-css/getting-to-know-html/#creating-hyperlinks
+The link should open in a new browser tab or window. Add CSS to remove the underline and change the color to red.
