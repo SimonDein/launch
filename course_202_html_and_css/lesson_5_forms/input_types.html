@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Input Types</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+</head>
+
+<!--
+The most versatile and widely used form widget is the input element.
+With HTML5 the input types has almost tripled.
+- Start with the type attribute when creating input elements
+
+The most common input types are
+- type="text"
+  - The text type creates a simple text entry field.
+  - The user can enter any text desired in this control, though the developer should almost always validate the data.
+  - Use the maxlength attribute to specify the input's maximum length.
+
+- type="password"
+  - The password type creates a single-line text field with an obscured value, often used for passwords and other sensitive information. - Use the maxlength attribute to specify the input's maximum length.
+
+- type="email"
+  - The email type allows entry of an email address in the form username@domain.
+  - Browsers that implement this type will try to prevent email addresses that are incorrectly formatted.
+  - However, the developer should almost always validate the data too.
+
+- type="tel"
+  - The tel type allows entry of a telephone number.
+  - Browsers that implement this type don't validate the input since phone numbers vary so much worldwide.
+
+- type="checkbox"
+  - The checkbox type lets the user choose one or more items from a series of yes/no-type options.
+  - Use the value attribute to give the value the form sends to the server when the user selects that checkbox.
+  - Use the checked attribute to pre-select checkboxes. Use the name attribute to name a set of related checkboxes.
+
+- type="radio"
+  - The radio type lets the user choose zero or one item from a list of options.
+  - Use the value attribute to define the value submitted by this item.
+  - Use the checked attribute to mark the default radio button.
+  - Use the name attribute to name a set of related radio buttons.
+  - The user can select precisely one radio button from each group.
+
+- type="submit"
+  - The submit type creates a button that the user can click to submit the contents of a form to the server.
+  - The action attribute on the form tag typically provides the URL of the server, but you can override that by using the formaction attribute with this tag.
+
+- type="reset"
+  - The reset type creates a button that the user can click to reset the contents of a form to its default values.
+  - Clicking a reset button does NOT send a request to the server.
+ -->
+
+<!------- EXAMPLES: ------>
+<body>
+  <form action="#" method="post">
+    <fieldset>
+      <label>
+        First Name
+        <input type="text" name="first_name" value="Tom Thumb" />
+      </label>
+    </fieldset>
+  </form>
+  
+  <form action="#" method="post">
+    <fieldset>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password"
+             value="Not-good-password" size="35" />
+    </fieldset>
+  </form>
+
+  <form action="#" method="post">
+    <fieldset>
+      <label>
+        Email
+        <input type="email" name="email" placeholder="username@domain" />
+      </label>
+    </fieldset>
+  </form>
+
+  <form action="#" method="post">
+    <fieldset>
+      <label>
+        Phone
+        <input type="tel" name="phone" placeholder="(###) ###-####" />
+      </label>
+    </fieldset>
+  </form>
+
+  <form action="#" method="post">
+    <fieldset>
+      <label>
+        <input type="checkbox" name="search" />
+        Sort search results
+      </label>
+  
+      <label>
+        <input type="checkbox" name="google" checked />
+        Search on Google
+      </label>
+  
+      <label>
+        <input type="checkbox" name="recent" checked />
+        Recent results (within last year)
+      </label>
+    </fieldset>
+  </form>
+
+  <form action="#" method="post">
+    <fieldset>
+      <label>
+        <input type="radio" name="color" value="red" />
+        Red
+      </label>
+  
+      <label>
+        <input type="radio" name="color" value="green" checked />
+        Green
+      </label>
+  
+      <label>
+        <input type="radio" name="color" value="blue" />
+        Blue
+      </label>
+    </fieldset>
+  </form>
+
+  <form action="#" method="post">
+    <fieldset>
+      <input type="submit" value="Save" />
+    </fieldset>
+  </form>
+
+  <form action="#" method="post">
+    <fieldset>
+      <input type="reset" value="Clear Form" />
+    </fieldset>
+  </form>
+</body>
+</html>

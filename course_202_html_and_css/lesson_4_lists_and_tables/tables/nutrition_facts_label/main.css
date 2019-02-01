@@ -1,0 +1,175 @@
+/* RESET
+
+http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* RESET END */
+
+
+html {
+  font-family: helvetica;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 200;
+}
+
+body {
+  text-align: left;
+  margin: auto;
+  display: inline-block;
+  border: 2px solid black;
+  padding: 0 10px;
+  width: 630px;
+}
+
+header {
+  border-bottom: 0.8rem solid black;
+  margin-bottom: 0.2rem;
+}
+
+strong {
+  font-weight: bold;
+}
+
+b {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+ul {
+  margin-bottom: 0.3rem;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+dt {
+  display: inline-block;
+}
+
+dd {
+  margin-left: auto;
+  text-align: right;
+  display: inline-block;
+}
+
+table {
+  font-size: 0.7rem;
+  width: 100%;
+}
+
+thead {
+  border-bottom: 1px solid black;
+}
+
+tr {
+  column-gap: 0.5em;
+}
+
+td {
+  padding: 0.2em 0;
+}
+
+caption {
+  line-height: 1.2;
+  padding-left: 20px; /* To make room for the asterisk in the :before below */
+  text-align: left;
+  margin-bottom: 0.2rem;
+}
+
+h1 {
+  font-family: arial;
+  font-weight: 800;
+  font-size: 2.8rem;
+  margin-left: -4px;
+}
+
+h2 {
+  margin-bottom: 0.2rem;
+}
+
+[scope="col"] {
+  text-align: right;
+}
+
+/* CLASSES */
+.secondary {
+  margin-left: 1.3em;
+}
+
+/* PSEUDO ELEMENTS */
+
+/* borders */
+li:nth-child(0n + 2) {
+  border-bottom: 0.4rem solid black;
+}
+
+li:nth-child(0n + 12) {
+  border-bottom: 0.8rem solid black;
+}
+
+/* Table indents */
+
+table tr:nth-child(4n + 2) td:first-child {
+  padding-left: 1.3em;
+}
+
+/* Asterisks before table caption */
+caption:before {
+  content: "*";
+  margin-left: -14px;
+}

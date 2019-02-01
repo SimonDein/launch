@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Nav</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+  <style>
+
+    body {
+      padding-top: 3rem;
+      font-family: roboto;
+      font-weight: 200;
+    }
+
+    /* Centers the menu in the browser */
+    nav {
+      text-align: center;
+    }
+    
+    /* Removes default padding and gaps between inline-block elements so the menu seems "whole" */
+    nav ul {
+      padding: 0;
+      font-size: 0; /* REMOVES THE GAP BETWEEN THE <li> */
+    }
+
+    /* The menu tabs can lay side by side */
+    nav li {
+      display: inline-block;
+    }
+    
+    nav a {
+      padding: 1rem 1.5rem;
+      font-size: 16px; /* Adds back the font size */
+      text-decoration: none;
+      color: black;
+      background-color: lightgrey;
+    }
+
+
+    /* Psuodo elements for style only */
+    a:hover {
+      background-color: darkgrey;
+    }
+
+    a:active {
+      background-color: grey;
+    }
+
+    /* Rounds the corners of the first menu tab */
+    ul li:first-child a {
+      border-radius: 5px 0 0 5px;
+    }
+
+    /* Rounds the corners of the lst menu tab */
+    ul li:last-child a {
+      border-radius: 0 5px 5px 0;
+    }
+    
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">The Store</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

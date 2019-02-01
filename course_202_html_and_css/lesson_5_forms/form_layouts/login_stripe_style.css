@@ -1,0 +1,110 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Reset end */
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #EEF0F3;
+}
+
+main {
+  display: block;
+  padding-top: 180px;
+}
+
+input {
+  border-radius: 5px;
+  margin-bottom: 14px;
+}
+
+input[type="email"],
+input[type="password"] {
+  padding: 10px 12px;
+  display: block;
+  width: 100%;
+}
+
+form h2 {
+  display: block;
+  width: max-content;
+  margin: 0 auto 1rem;
+  padding: 1rem 0;
+
+  font-size: 1rem;
+  border-bottom: solid 1px lightgrey;
+}
+
+form input[type="submit"] {
+  width: 100%;
+  padding: 10px 12px;
+  color: white;
+  background-image: linear-gradient(rgb(125, 197, 238), rgb(0, 140, 221) 85%, rgb(48, 162, 228));
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+.login-form {
+  box-sizing: border-box;
+  display: block;
+  width: 330px;
+  margin: 0 auto;
+  padding: 14px;
+
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px rgba(14,41,57,.12), 0 2px 5px rgba(14,41,57,.44), inset 0 -1px 2px rgba(14,41,57,.15);
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(242, 246, 249));
+}

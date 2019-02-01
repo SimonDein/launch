@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+  <style>
+    fieldset {
+     border: none; /* borders removed around <fieldset> */
+    }
+  </style>
+</head>
+<body>
+  <!-- Form - the parent element for all form related elements -->
+  <form action="#" method="post">
+    <h1>Log In</h1>
+    
+    <fieldset> <!-- Fieldset - groups information together -->
+      <label for="username">Username</label> <!-- Label - associates descriptive text with input fields -->
+      <input type="text" name="username" id="username"> <!-- Input:text - Input text field -->
+    </fieldset>
+    
+    <fieldset>
+      <label for="password">password</label>
+      <input type="text" name="password" id="password">
+    </fieldset>
+
+    <fieldset>
+      <input type="submit" value="Submit"> <!-- Input:submit:no_formaction - Will submit form to action in form element-->
+      <input type="submit" formaction="/account/delete" value="Delete Account"> <!-- See description below -->
+      <!-- Input:submit:formaction - will submit form to "formaction" -->
+      <input type="submit" formaction="/account/password" value="Forgot Password">
+      <input type="reset" value="Reset"> <!-- Input:reset - resets all entered information in form -->
+    </fieldset>
+  </form>
+  </form>
+</body>
+</html>
