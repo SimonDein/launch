@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Search For News Converted</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <form action="#" method="get">
+    <fieldset>
+      <dl>
+        <dt><label for="category">Category</label></dt>
+        <dd>
+          <select name="category" id="category" multiple>
+            <option type="radio" value="core" selected>Core</option>
+            <option type="radio" value="plugins">Plugins and Libraries</option>
+            <option type="radio" value="conventions">Conventions</option>
+            <option type="radio" value="reviews">Reviews</option>
+            <option type="radio" value="opinion">Option</option>
+            <option type="radio" value="people">People</option>
+          </select>
+        </dd>
+      </dl>
+
+      <dl>
+        <dt><label for="tags">Tags</label></dt>
+        <dd>
+          <select name="tags" id="tags" size="5">
+            <option type="checkbox" value="html">HTML</option>
+            <option type="checkbox" value="css">CSS</option>
+            <option type="checkbox" value="javascript">JavaScript</option>
+            <option type="checkbox" value="ruby">Ruby</option>
+            <option type="checkbox" value="rails">Rails</option>
+            <option type="checkbox" value="python">Python</option>
+            <option type="checkbox" value="django">Django</option>
+          </select>
+        </dd>
+      </dl>
+
+      <button type="submit">Filter</button>
+      <button type="reset">Reset</button>
+    </fieldset>
+  </form>
+</body>
+
+</html>

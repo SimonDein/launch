@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <form action="#" method="post$">
+    <fieldset>
+      <dl>
+        <dt><label for="first_name">First name</label></dt>
+        <dd><input type="text" name="first_name" id="first_name" required></dd>
+  
+        <dt><label for="last_name">Last name</label></dt>
+        <dd><input type="text" name="last_name" id="last_name" required></dd>
+  
+        <dt><label for="email">Email</label></dt>
+        <dd><input type="email" name="email" id="email"
+                   autocomplete="off" spellcheck="off"
+                   autocapitalize="off" required></dd>
+  
+        <dt><label for="phone">Phone</label></dt>
+        <dd><input type="tel" name="phone" id="phone" placeholder="####-####" required></dd>
+
+        <dt><label for="phone_type">Phone Type</label></dt>
+        <dd>
+          <select name="phone_type" id="phone_type">
+            <option selected>home</option>
+            <option>business</option>
+            <option>mobile</option>
+          </select>
+        </dd>
+      </dl>
+
+      <dt><label for="message">Message</label></dt>
+      <dd>
+        <textarea name="message" id="message" cols="80" rows="6"
+                  placeholder="Type your message here"></textarea>
+      </dd>
+
+      <input type="submit" value="Submit">
+    </fieldset>
+  </form>
+</body>
+
+</html>
