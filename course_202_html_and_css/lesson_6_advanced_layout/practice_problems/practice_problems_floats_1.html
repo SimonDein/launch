@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Practice Problems: Floats</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: lightgrey;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: grey;
+    }
+
+    article,
+    aside,
+    footer {
+      box-sizing: border-box;
+      padding: 1rem;
+    }
+
+    article {
+      width: 70%;
+      float: left;
+      background: lightyellow;
+    }
+
+    aside {
+      float: none;
+      overflow: hidden;
+      background: lightgreen;
+    }
+
+    section::after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+
+    footer {
+      background: lightblue;
+      clear: both;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <article>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dictum neque vel metus ornare iaculis non vitae
+        tellus. Nulla quis nulla in erat pellentesque efficitur. Aenean dui lectus, vehicula quis lorem a, ultrices
+        mattis mauris. Suspendisse iaculis tincidunt risus eget tempor. Aenean hendrerit enim quis felis posuere, ut
+        ultrices lorem congue. Maecenas pellentesque est diam, ac pellentesque ipsum consectetur at. Fusce tincidunt
+        dolor vitae ligula bibendum faucibus ac et lacus.
+
+        Quisque tincidunt nisl nec ante mollis, ut sollicitudin libero eleifend. Aliquam nec aliquam urna. Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Aenean et pulvinar metus. Integer ut nibh convallis, egestas lacus
+        sed, pretium est. Nam at elementum turpis. Aenean luctus porta diam, in condimentum felis imperdiet ac. Quisque
+        id pharetra dolor.
+
+        Morbi sapien augue, feugiat eget fermentum sed, elementum sed urna. Suspendisse iaculis enim ullamcorper nisi
+        porta, vitae pellentesque nisi mollis. Suspendisse bibendum sem vel varius blandit. Ut molestie nisi eros, a
+        vulputate lectus mattis eget. In felis elit, rutrum nec lectus at, posuere ultrices nisi. Quisque non fermentum
+        odio. Etiam orci diam, venenatis in justo vel, convallis tristique urna. Aenean vel finibus orci.
+
+        Pellentesque et nisl nec libero mollis iaculis nec sed ipsum. Donec ut risus eu nunc iaculis interdum at in
+        odio. Nulla commodo ultrices risus, in laoreet magna vestibulum ac. Fusce euismod tempor faucibus. Ut quis
+        rhoncus enim. Aenean posuere, leo in efficitur imperdiet, urna neque maximus ligula, lacinia sagittis sem arcu
+        non ligula. Vestibulum efficitur magna quis velit porta accumsan. Maecenas ullamcorper nulla malesuada
+        porttitor lobortis.
+
+        Vestibulum nisl ligula, pretium eu scelerisque vel, tincidunt eu odio. Sed orci ligula, eleifend pretium
+        pulvinar ac, consectetur ut orci. Pellentesque sagittis ipsum vitae lorem posuere imperdiet. Vestibulum sit
+        amet elementum metus, eget tristique nisi. Sed vehicula nisi augue. Phasellus vulputate erat nec pulvinar
+        aliquam. Nullam aliquam faucibus mauris in accumsan. Vivamus mauris nisl, lacinia non dictum vitae, gravida at
+        arcu. Sed gravida ipsum ipsum, eget accumsan nisi vulputate id. Sed ac luctus quam, a rhoncus nisi. Ut vel
+        justo nunc. Nulla pharetra a lectus in auctor. Pellentesque dui arcu, molestie a turpis id, ullamcorper
+        pharetra libero.
+
+        Etiam et odio at neque iaculis molestie quis non augue. Aenean vehicula aliquet eros ac euismod. Nunc tempus
+        diam id est rutrum accumsan. Ut varius aliquam dignissim. Nunc pharetra velit eu viverra cursus. Morbi gravida
+        augue eros, ac commodo dui accumsan nec. Sed placerat orci non nulla iaculis, id aliquet arcu porttitor. Nulla
+        vitae tortor at metus pellentesque rutrum sit amet fermentum purus. In fermentum convallis tellus, id aliquam
+        massa vestibulum in. Etiam vestibulum porta leo, sit amet consectetur magna sodales vitae. Nulla efficitur
+        faucibus ante, eget dapibus lorem auctor at. Aenean quis ornare ligula.
+
+        Pellentesque ac nibh volutpat, rutrum neque ut, varius leo. Quisque placerat et massa vel accumsan. Morbi
+        sollicitudin risus at aliquet dignissim. Aliquam quis porta felis. Vestibulum molestie eros eu vehicula congue.
+        Etiam fermentum ex id dui gravida consequat. Pellentesque mollis venenatis egestas. Maecenas lacinia elit id
+        fermentum faucibus. Pellentesque dignissim sagittis nisi ut tempor. Ut nec consequat tortor. Vivamus id neque
+        nec nunc scelerisque malesuada malesuada quis metus. Quisque elementum ipsum ut aliquam vestibulum.
+      </p>
+    </article>
+    <aside>
+      <p>
+        Pellentesque et nisl nec libero mollis iaculis nec sed ipsum. Donec ut risus eu nunc iaculis interdum at in
+        odio. Nulla commodo ultrices risus, in laoreet magna vestibulum ac. Fusce euismod tempor faucibus. Ut quis
+        rhoncus enim. Aenean posuere, leo in efficitur imperdiet, urna neque maximus ligula, lacinia sagittis sem arcu
+        non ligula. Vestibulum efficitur magna quis velit porta accumsan. Maecenas ullamcorper nulla malesuada
+        porttitor lobortis.
+
+        Etiam et odio at neque iaculis molestie quis non augue. Aenean vehicula aliquet eros ac euismod. Nunc tempus
+        diam id est rutrum accumsan. Ut varius aliquam dignissim. Nunc pharetra velit eu viverra cursus. Morbi gravida
+        augue eros, ac commodo dui accumsan nec. Sed placerat orci non nulla iaculis, id aliquet arcu porttitor. Nulla
+        vitae tortor at metus pellentesque rutrum sit amet fermentum purus. In fermentum convallis tellus, id aliquam
+        massa vestibulum in. Etiam vestibulum porta leo, sit amet consectetur magna sodales vitae. Nulla efficitur
+        faucibus ante, eget dapibus lorem auctor at. Aenean quis ornare ligula.
+      </p>
+    </aside>
+    <footer>
+      <p>
+        Pellentesque dignissim sagittis nisi ut tempor. Ut nec consequat tortor. Vivamus id neque
+        nec nunc scelerisque malesuada malesuada quis metus.
+      </p>
+    </footer>
+  </section>
+</body>
+
+</html>

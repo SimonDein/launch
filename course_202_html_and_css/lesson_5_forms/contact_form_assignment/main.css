@@ -1,0 +1,187 @@
+/* CSS Mini Reset */
+html,
+body,
+div,
+form,
+fieldset,
+legend,
+caption,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre
+{
+    font-size: 100%;
+    font-weight: normal;
+
+    margin: 0;
+    padding: 0;
+
+    vertical-align: baseline;
+
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+
+table
+{
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+th,
+td
+{
+    text-align: left;
+    vertical-align: top;
+}
+
+img
+{
+    border: 0;
+}
+
+dl {
+  margin: 0;
+}
+/*************************************/
+/************ Reset end **************/
+/*************************************/
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, Helvetica, sans-serif;
+  background-color: rgb(62, 65, 71);
+  font-size: 16px;
+}
+
+dd {
+  margin-left: 0;
+}
+
+form {
+  max-width: 800px;
+  margin: 100px auto;
+  border-radius: 4px;
+  
+  color: #6d7179;
+  background-color: #313439;
+}
+
+textarea {
+  width: 100%;
+}
+
+form h1 {
+  font-weight: 200;
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+  margin: 0.2em 0 1.5em;
+}
+
+fieldset legend {
+  margin-bottom: 2em;
+}
+
+select {
+  -webkit-appearance: textfield;
+  border-radius: 0;
+  height: 28px;
+}
+
+form fieldset > label {
+  font-size: 0.8rem;
+}
+
+form button {
+  color: white;
+  padding: 2em 0;
+  width: 100%;
+  
+  border: none;
+}
+
+form label,
+legend {
+  display: block;
+  margin-bottom: 0.5em;
+  
+  font-size: 0.7rem;
+}
+
+input,
+select {
+  color: white;
+  letter-spacing: 0.1em;
+}
+
+form button,
+form label,
+legend {
+  text-transform: uppercase;
+}
+
+form select,
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+  vertical-align: top;
+  width: 100%;
+  margin-bottom: 3em;
+
+  font-size: 1rem;
+  border-width: 0 0 1px 0;
+  background-color: #313439;
+  border-color: #6d7179;
+  padding-bottom: 0.5rem;
+}
+
+/************* PSEUDO CLASSES ****************/
+input[type="text"]:focus,
+input[type="email"]:focus {
+  outline: none;
+}
+
+/************* CLASSES ************************/
+.form {
+  padding: 40px;
+}
+
+.partial {
+  display: inline-block;
+  width: 50%;
+}
+
+.pad-right {
+  padding-right: 10px;
+}
+
+.pad-left {
+  padding-left: 10px;
+}
+
+.send-btn {
+  background-color: #D84E5B;
+}
+
+.reset-btn {
+  background-color:#6d7179;;
+}
+
+fieldset label:last-child,
+fieldset label:last-child {
+  margin-bottom: 3em;
+}
