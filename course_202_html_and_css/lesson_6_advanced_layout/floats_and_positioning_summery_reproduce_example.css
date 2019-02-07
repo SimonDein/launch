@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  
+  font-size: 16px;
+  line-height: 1.2;
+  font-family: Helvetica, Arial, sans-serif;
+  color: rgb(58, 58, 58);
+  background-color: lightgrey;
+}
+
+header {
+  padding-top: 6rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: 1rem;
+
+  font-family: Roboto;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 4rem;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 0.5em;
+
+  font-size: 2rem;
+  text-align: center;
+}
+
+h3 {
+  margin-top: 2em;
+
+  font-size: 1.5rem;
+}
+
+h4 {
+  margin-top: 2em;
+
+  font-size: 1.1rem;
+}
+
+h5 {
+  font-size: 1em;
+  font-weight: bolder;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+article {
+  height: fit-content;
+  max-width: 860px;
+  padding: 0 3em;
+  margin: 0 auto;
+
+  background-color: rgb(241, 241, 241);
+  box-shadow: 0 0 50px 2px rgb(66, 66, 66, 0.5)
+}
+
+section {
+  margin-bottom: 6em;
+}
+
+pre {
+  width: fit-content;
+  margin-left: 2em;
+  padding: 1em;
+  background-color: rgb(231, 231, 231);
+}
+
+code {
+  background-color: rgb(231, 231, 231);
+  padding: 0 0.2em;
+}
+
+div {
+  color: white;
+}
+
+div a {
+  background-color: rgb(57, 148, 148);
+}
+
+div div {
+  text-align: center;
+}
+
+/******************************************/
+/*************** CLASSES ******************/
+/******************************************/
+
+.example {
+  font-style: italic;
+}
+
+.border {
+  margin: 3rem 0;
+  padding: 2rem;
+  border: dashed 2px black;
+  overflow: hidden;
+}
+
+.margin {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.padding {
+  padding: 2rem;
+}
+
+.inline-floating {
+  float: left;
+  margin-right: 20px;
+}
+
+.height {
+  height: 60px;
+
+  paddding: 20px;
+  margin: 20px;
+}
+
+.width {
+  width: 90px;
+}
+
+.width-40 {
+  width: 40%;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-and-height {
+  width: 180px;
+  height: 120px;
+  padding: 20px;
+}
+
+.float-right {
+  float: right
+}
+
+.float-left {
+  float: left
+}
+
+.purple {
+  background-color: rgb(97, 72, 105);
+}
+
+.red {
+  background-color: rgb(228, 78, 78);
+}
+
+.blue {
+  background-color: rgb(55, 79, 185);
+}
+
+.clear-both {
+  clear: both;
+}
+
+.fixed {
+  background-color: rgba(55, 79, 185, 0.6);
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  border-radius: 4px;
+}
+
+.relative {
+  position: relative;
+  top: 60px;
+  left: -80px;
+  text-align: center;
+  width: 25%;
+}
+
+.relative-wrapper {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+  left: 180px;
+  bottom: 100px;
+}
+
+.vertical-nav a {
+  width: 100%;
+  display: block;
+  margin-bottom: 1em;
+  padding: 1em 0;
+  text-align: center;
+}
+
+.horizontal-nav a {
+  padding: 1em 2em;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+/******************************************/
+/************* PSEUDO CLASSES *************/
+/******************************************/
+
+/* h1:after {
+  content: "";
+  width: 60%;
+  border-bottom: 1px solid black;
+  display: block;
+  margin: 1em auto 0.5em;
+} */
+
+section:after,
+h1:after {
+  content: "";
+  width: 10%;
+  border-bottom: 1px solid black;
+  display: block;
+  margin: 6rem auto 0;
+}
+
+section:last-child:after {
+  border: none;
+}
+
+.clear:after {
+  content: "";
+  clear: both;
+  display: block;
+}
