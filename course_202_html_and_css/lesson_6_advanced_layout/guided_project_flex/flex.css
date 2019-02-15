@@ -1,0 +1,165 @@
+/* CSS Reset ----------------------- */
+
+/* https://css-tricks.com/box-sizing/ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Reset end ---------------------------- */
+/* -------------------------------------- */
+
+/* Base Styles -------------------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font: normal 16px Helvetica, Arial, sans-serif;
+}
+
+header {
+  background-color: blue;
+  text-align: center;
+
+  padding: 2rem 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: white;
+}
+
+nav {
+  background-color: cyan;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  
+}
+
+ul {
+  list-style-type: none;
+}
+
+li a {
+  display: inline-block;
+  padding: 1rem 0;
+  text-decoration: none;
+  width: 100%;
+}
+
+article,
+aside {
+  padding: 1rem 1.5rem;
+}
+
+aside {
+  background-color: lightgreen;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+footer {
+  background-color: yellow;
+}
+
+/* Pseudo-classes ------------------ */
+a:focus,
+a:hover {
+  background-color: blue;
+  color: yellow;
+}
+/* Main Styles --------------------- */
+#copyright {
+  order: 1;
+  margin: 0 1rem;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+} 
+
+#logo {
+  background-color: orange;
+}
+
+/* Layout Styles ------------------ */
+.flex-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flex-wrapper > * {
+  /* All IMMEDIATE child elements take up 100% size and will
+     take up equal space at distribution */
+  flex: 1 100%;
+}
+
+.flex-wrapper article {
+  flex-grow: 2;
+}
+
+/* Floated Columns ------------------ */
+/* Float Clearfix ------------------ */
+/* Media Queries -------------------- */
+@media all and (min-width: 600px) {
+  .flex-wrapper > * {
+    flex: 1 0 0;
+  }
+}
