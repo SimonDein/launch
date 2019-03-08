@@ -1,0 +1,224 @@
+/* CSS Reset ----------------------- */
+/* https://css-tricks.com/box-sizing/ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Reset end ---------------------------- */
+html {
+  font-family: "Nunito Sans";
+  font-weight: 400;
+  font-size: 20px;
+}
+
+body {
+  background: url("assets/bg_body.gif") repeat;
+}
+
+main {
+  background: white;
+  text-align: center;
+  color: black;
+
+  overflow: hidden;
+}
+
+footer {
+  text-align: center;
+  background-color: #e7e7e7;  
+  color: #b2b2b2;
+
+  padding: 90px 0 78px;
+}
+
+section {
+  padding-top: 120px;
+  margin: 0 auto;
+  width: 1000px;
+}
+
+section img {
+  width: 100%;
+  margin-bottom: 45px;
+}
+
+article {
+  margin-bottom: 78px;
+  padding: 0 90px;
+}
+
+nav {
+  margin-bottom: 50px;
+}
+
+nav a {
+  font-size: 26px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #cacaca;
+  padding: 0 39px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+
+  margin-bottom: 0.9em;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #3e98b2;
+  
+  margin-bottom: 1em;
+}
+
+p {
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+}
+
+/* Layout ---------------------------- */
+[role="banner"] {
+  text-align: center;
+}
+
+.logo {
+  margin: 135px 0 125px;
+}
+
+footer span {
+  line-height: 1.4;
+  
+  display: inline-block;
+  margin-bottom: 42px;
+}
+
+.team {
+  padding-top: 44px;
+  margin-bottom: 210px;
+}
+
+.team a {
+  display: inline-block;
+  text-decoration: none;
+  color: #6db9ff;
+  font-size: 24px;
+
+  padding: 0 26px;
+}
+
+.active {
+  color: #6db9ff;
+  font-weight: 700;
+}
+
+/* Pseduo Elements ---------------------------- */
+h1::before,
+h1:after {
+  font-size: 0.8em;
+  content: "•";
+  padding: 0 28px;
+  vertical-align: 3px;
+}
+
+/* Images & Icons ---------------------------- */
+.team dt {
+  display: block;
+  width: 140px;
+  height: 152px;
+
+  margin-bottom: 30px;
+} 
+
+.kevin {
+  background-image: url(assets/img_kevin.jpg);
+  background-repeat: no-repeat;
+}
+
+.louis {
+  background-image: url(assets/img_Louis.jpg);
+  background-repeat: no-repeat;
+}
+
+.kasper {
+  background-image: url(assets/img_Kasper.jpg);
+  background-repeat: no-repeat;
+}
+
+.chris {
+  background-image: url(assets/img_chris.jpg);
+  background-repeat: no-repeat;
+}
+
+[role="social"] a {
+  width: 46px;
+  height: 46px;
+  display: inline-block;
+  background-image: url(assets/icons_social-media.png);
+  background-repeat: no-repeat;
+  margin: 0 60px;
+}
+
+.facebook {
+  background-position: 0 -46px;
+}
+
+.email {
+  background-position: 0 -92px;
+}
+
+.instagram {
+  background-position: 0 -138px;
+}
