@@ -12,15 +12,14 @@ myArray.forEach(function(arr){
   })
 })
 
-
 //another solution
 for(let i = 0; i < myArray.length; i++) {
-  let innerArray = myArray[i]
+  let innerArray = myArray[i];
 
   for(let i = 0; i < innerArray.length; i++) {
     let num = innerArray[i];
     if (num % 2 === 0) {
-      console.log(num)
+      console.log(num);
     }
   }
 }
