@@ -19,3 +19,4 @@ console.log(isPrime(3));   // true
 console.log(isPrime(43));  // true
 console.log(isPrime(55));  // false
 console.log(isPrime(0));   // false
+

@@ -16,14 +16,12 @@ function getGrade(points) {
   }
 }
 
-let grades = [];
+let scores = [];
 
 for(let i = 1; i <= 3; i++) {
-  let score = prompt(`Enter score ${i}: `);
-  grades.push(score);
+  let score = Number(prompt(`Enter score ${i}: `));
+  scores.push(score);
 }
 
-let points = average(grades);
-let grade = getGrade(points);
-
+var grade = getGrade(average(scores));
 console.log(`Based on the three scores your grade is "${grade}"`);
