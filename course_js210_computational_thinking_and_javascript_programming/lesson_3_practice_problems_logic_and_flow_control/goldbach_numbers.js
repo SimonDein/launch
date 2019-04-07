@@ -18,43 +18,17 @@ function checkGoldbach(num) {
   if (num % 2 === 1 || num <= 3) {
     console.log('null');
     return;
-  } else if (num === 4) {
-    console.log('2 2');
-    return;
   }
+
+  let start = 2;
   
-  let primes = [];
-  let start = 3;
-  let end = (num - 1);
-
-  while (start <= end) {
-    // if (isPrime(start) && isPrime(end)) {
-    //   if (start + end === num ) {
-    //     primes.push([start, end]);
-    //   }
-
-    //   start += 2;
-    //   end += -2;
-
-    // } else if (!isPrime(start)) {
-    //   start += 2
-
-    // } else if (!isPrime(end)) {
-    //   end -= 2
-      
-    // }
-    while (start + end > num) {
-      if ((isPrime(start) && isPrime(end)) && start + end === num) {
-        primes.push([start, end]);
-      }
-      
-      end -= 2
+  while (start <= num / 2) {
+    let remainder = num - start;
+    if (isPrime(start) && isPrime(remainder)) {
+      console.log(`${start} ${remainder}`);
     }
-
-    start += 2
+    start += 1;
   }
-
-  console.log(primes);
 }
 
 // simple tests ----
