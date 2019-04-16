@@ -8,12 +8,12 @@
 
 function isLetter(asciiChar) {
    return (asciiChar >= 65 && asciiChar <= 90) ||
-         (asciiChar >= 97 && asciiChar <= 122)
+         (asciiChar >= 97 && asciiChar <= 122);
 }
 
-function exceedsAsciiLimit(asciiChar, asciiCharRotated) {
+function exceedsAsciiLetterRange(asciiChar, asciiCharRotated) {
   return   (asciiCharRotated > 90 && asciiChar <= 90) ||
-         (asciiCharRotated > 122 && asciiChar <= 122)
+         (asciiCharRotated > 122 && asciiChar <= 122);
 }
 
 function rot13(string) {
@@ -30,15 +30,15 @@ function rot13(string) {
     if (isLetter(asciiChar)) {
       asciiCharRotated += ROTATION;
 
-      if (exceedsAsciiLimit(asciiChar, asciiCharRotated)) {
+      if (exceedsAsciiLetterRange(asciiChar, asciiCharRotated)) {
         asciiChar -= OFFSET;
       }
     }
     
-    newString += String.fromCharCode(asciiChar)
+    newString += String.fromCharCode(asciiChar);
   }
   
-  return newString
+  return newString;
 }
 
 
