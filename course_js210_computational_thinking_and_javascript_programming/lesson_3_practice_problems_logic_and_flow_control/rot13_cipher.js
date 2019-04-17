@@ -6,36 +6,43 @@
 
 // Don't modify characters that are not letters.
 
-function isLetter(asciiChar) {
-   return (asciiChar >= 65 && asciiChar <= 90) ||
-         (asciiChar >= 97 && asciiChar <= 122);
+function isLetter(asciiCode) {
+  LOW_CASE_LOW_BOUNDARY  = 65;
+  LOW_CASE_HIGH_BOUNDARY = 90;
+  UP_CASE_LOW_BOUNDARY   = 97;
+  UP_CASE_HIGH_BOUNDARY  = 122;
+  
+   return (asciiCode >= LOW_CASE_LOW_BOUNDARY && asciiCode <= LOW_CASE_HIGH_BOUNDARY) ||
+         (asciiCode >= UP_CASE_LOW_BOUNDARY && asciiCode <= UP_CASE_HIGH_BOUNDARY);
 }
 
-function exceedsAsciiLetterRange(asciiChar, asciiCharRotated) {
-  return   (asciiCharRotated > 90 && asciiChar <= 90) ||
-         (asciiCharRotated > 122 && asciiChar <= 122);
+function exceedsAsciiLetterRange(asciiCode, asciiCodeRotated) {
+  return   (asciiCodeRotated > 90 && asciiCode <= 90) ||
+         (asciiCodeRotated > 122 && asciiCode <= 122);
 }
 
 function rot13(string) {
   const ROTATION = 13;
   const OFFSET = 26;
   let newString = '';
-  let asciiChar;
-  let asciiCharRotated;
+  let asciiCode;
+  let asciiCodeRotated;
 
   for(i = 0; i < string.length; i++) {
-    asciiChar = string.charCodeAt(i);
+    asciiCode = string.charCodeAt(i);
 
 
-    if (isLetter(asciiChar)) {
-      asciiCharRotated += ROTATION;
+    if (isLetter(asciiCode)) {
+      asciiCodeRotated = asciiCode + ROTATION;
 
-      if (exceedsAsciiLetterRange(asciiChar, asciiCharRotated)) {
-        asciiChar -= OFFSET;
+      if (exceedsAsciiLetterRange(asciiCode, asciiCodeRotated)) {
+        asciiCodeRotated -= OFFSET;
       }
+
+      asciiCode = asciiCodeRotated;
     }
     
-    newString += String.fromCharCode(asciiChar);
+    newString += String.fromCharCode(asciiCode);
   }
   
   return newString;
