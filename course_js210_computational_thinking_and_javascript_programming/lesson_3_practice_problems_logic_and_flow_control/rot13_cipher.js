@@ -6,19 +6,20 @@
 
 // Don't modify characters that are not letters.
 
+LOW_CASE_LOW_BOUNDARY  = 65;
+LOW_CASE_HIGH_BOUNDARY = 90;
+UP_CASE_LOW_BOUNDARY   = 97;
+UP_CASE_HIGH_BOUNDARY  = 122;
+
 function isLetter(asciiCode) {
-  LOW_CASE_LOW_BOUNDARY  = 65;
-  LOW_CASE_HIGH_BOUNDARY = 90;
-  UP_CASE_LOW_BOUNDARY   = 97;
-  UP_CASE_HIGH_BOUNDARY  = 122;
   
    return (asciiCode >= LOW_CASE_LOW_BOUNDARY && asciiCode <= LOW_CASE_HIGH_BOUNDARY) ||
-         (asciiCode >= UP_CASE_LOW_BOUNDARY && asciiCode <= UP_CASE_HIGH_BOUNDARY);
+            (asciiCode >= UP_CASE_LOW_BOUNDARY && asciiCode <= UP_CASE_HIGH_BOUNDARY);
 }
 
 function exceedsAsciiLetterRange(asciiCode, asciiCodeRotated) {
-  return   (asciiCodeRotated > 90 && asciiCode <= 90) ||
-         (asciiCodeRotated > 122 && asciiCode <= 122);
+  return (asciiCodeRotated > LOW_CASE_HIGH_BOUNDARY && asciiCode <= LOW_CASE_HIGH_BOUNDARY) ||
+           (asciiCodeRotated > UP_CASE_HIGH_BOUNDARY && asciiCode <= UP_CASE_HIGH_BOUNDARY);
 }
 
 function rot13(string) {
