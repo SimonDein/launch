@@ -9,7 +9,7 @@ function computeSum(limit) {
     sum += i;
   }
   
-  return `The sum of the numbers between 1 and ${limit} is ${sum}`;
+  return sum;
 }
 
 function computeProduct(limit) {
@@ -18,8 +18,8 @@ function computeProduct(limit) {
   for(let i = 1; i <= limit; i++) {
     product *= i;
   }
-  
-  return `The product of the numbers between 1 and ${limit} is ${product}`;
+
+  return product;
 }
 
 // reassing to question function for brevity
@@ -31,13 +31,16 @@ if (limit > 0) {
   let choice = rlSync("Do you want to determine the sum or the product of all numbers between 1 and your entered number?\n\nEnter 'p' for product, 's' for sum ");
   let result;
   
+
   
   if (choice === 's') {
     result = computeSum(limit);
+    `The sum of the numbers between 1 and ${limit} is ${result}`;
   } else if (choice === 'p') {
     result = computeProduct(limit);
+    `The product of the numbers between 1 and ${limit} is ${result}`;
   } else {
-    result = "You didn't choose 's' or 'p'"
+    console.log("You didn't choose 's' or 'p'");
   }
 
   console.log(result)
