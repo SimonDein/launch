@@ -2,11 +2,27 @@
 
 // The shift method removes the first element from an array and returns that element; if the array is empty, shift returns undefined. The unshift method adds one or more elements to the start of an array and returns the new length of the array. Both methods mutate the original array.
 
-function unshift(array) {
-  for(let i = 1; i < testArray = [1, 2, 3]; i++) {
-    
-  }
+// Wihtout using splice()
+// function unshift(array) {q
+//   let unshiftLength = arguments.length - 1;
   
+//   for(let i = array.length - 1; i >= 0; i--) {
+//     array[i + unshiftLength] = array[i];
+//   }
+
+//   for(let i = 0; i < unshiftLength; i++) {
+//     array[i] = arguments[i + 1];
+//   }
+  
+//   return array.length;
+// }
+
+// Using splice
+function unshift(array) {
+  for(let i = 1; i <= arguments.length - 1; i++) {
+    array.splice(0, 0, arguments[i]);
+  }
+
   return array.length;
 }
 
