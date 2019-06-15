@@ -53,19 +53,20 @@ var classScores = {
 // Grade on each student
 // Average on each student
 
+const MAX_EXAM_SCORE = 100;
 const EXAM_WEIGHT = 0.65;
 const EXERCISE_WEIGHT = 0.35;
 
 function getClassRecordSummary(classScores) {
   let summery = {
     studentGrades: generateGrades(classScores),
-    exams: generateExamStatistics(classScores),
+    exams:         generateExamStatistics(classScores),
   };
 
   return summery;
 }
 
-getClassRecordSummary(classScores);
+console.log(getClassRecordSummary(classScores));
 
 
 
@@ -77,8 +78,6 @@ function generateGrades(classScores) {
     grades.push(grade);
   })
 
-  console.log(grades)
-  
   return grades;
 }
 
@@ -114,19 +113,28 @@ function generatePercentGrade(scores) {
 }
 
 function sum(numbers) {
-  return numbers.reduce((total, number) => total + number);
+  return numbers.reduce((total, number) => (total + number));
+}
+
+function min(numbers) {
+  return numbers.reduce((min, currentNumber) => currentNumber < min ? currentNumber : min);
+}
+
+function average(numbers) {
+  return Number((sum(numbers) / numbers.length).toFixed(1));
 }
 
 function generateExamStatistics(classScores) {
-  let examStatistics = {};
   let classExamScores = getClassExamScores(classScores);
+  let examStatistics = classExamScores.map(function (examScore) {
+    return {
+      'average': average(examScore),
+      'minimum': min(examScore),
+      'maximum': MAX_EXAM_SCORE,
+    }
+  })
 
-  classExamScores.map(function (examScore) {})
-  
-  // We need an array per exam containing scores per student
-  
-
-  // Then we can find the smallest, average and we know the maximum is 100
+  return examStatistics;
 }
 
 function getClassExamScores(classScores) {
