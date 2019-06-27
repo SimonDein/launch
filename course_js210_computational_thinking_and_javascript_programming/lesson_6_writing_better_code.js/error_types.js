@@ -20,7 +20,7 @@ a();        // TypeError: Property 'a' is not a function
 // SyntaxError
 // A SyntaxError is special in that one usually occurs immediately after loading a JavaScript program, and before it begins to run. Unlike ReferenceError and TypeError, which are dependent upon specific variables and values encountered at runtime, JavaScript detects SyntaxErrors solely from the text of your program.
 function ( {}                   // SyntaxError: Unexpected token (
-There are several cases where JavaScript can throw a SyntaxError while a program is running. For instance, this code raises a SyntaxError at runtime.
+// There are several cases where JavaScript can throw a SyntaxError while a program is running. For instance, this code raises a SyntaxError at runtime.
 
 JSON.parse('not really JSON');  // SyntaxError: Unexpected token i in JSON at position 0
 There are a few other errors that can occur in a JavaScript program, including RangeError, URIError, among others; these tend to be rarer.
