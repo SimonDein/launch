@@ -31,7 +31,7 @@ var longText = 'Four score and seven years ago our fathers brought forth' +
   ' earth.';
 
 function mostWordsSentence(text) {
-  sentences = text.match(/\w.*?[.!?]/mg);
+  let sentences = text.match(/\w.*?[.!?]/mg);
   let wordcount;
   let sentenceIndex;
 
