@@ -1,0 +1,48 @@
+Given a year as an integer, return a string of the number and suffix of the century the integer belongs to.
+
+Understand The Problem:
+Input:
+  An integer between 1 - many.
+
+Output:
+  A string of century number appenden with suffix.
+
+Rules:
+  A century is from 01 to 99
+  A new century starts at 01 - fx 101 is the 2nd century
+
+  Suffix:
+    1: st
+    2: nd
+    3: 3rd
+    4 - : th
+
+    Exception
+    11, 12, 13: th
+
+Example and test cases:
+
+1 => 1st
+101 => 2nd
+200 => 2nd
+201 => 3rd
+301 => 4th
+1201 => 13th
+2001 => 21st
+2230 => 23rd
+
+Data Structure:
+We keep input as number as mainly need arithmetic operations to solve the problem.
+Once we have the century number we can get the century suffix as a string.
+
+Algorithm:
+Get century number
+  century: year / 100 ceiled
+Get number suffix
+  suffix:
+    Get last two digits
+      If last two digits in exceptions
+        Return the suffix for exceptions
+      Else
+        Get last digit
+        Return appropriate suffix for last digit
