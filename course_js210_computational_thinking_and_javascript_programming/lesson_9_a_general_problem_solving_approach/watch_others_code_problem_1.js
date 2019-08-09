@@ -75,16 +75,11 @@ function cleanPhoneNumber(number) {
   cleanedNumber = number.replace(/\D/g, '');
   length = cleanedNumber.length;
   
-  if (length > 11 || length < 10) {
+  if (length > 11 || length < 10 || length === 11 && cleanedNumber[0] === '1') {
     return DEFAULT
   }
 
-  if (length === 11) {
-    if (cleanedNumber[0] === '1') {
-      return cleanedNumber.slice(1);
-    } else
-    return DEFAULT
-  }
+  if (length === 11) return cleanedNumber.slice(1);
   
   return cleanedNumber;
 }
