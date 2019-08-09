@@ -42,52 +42,72 @@ Data Structure:
 String: will provide us with regex to extrapolate the digtits as well as perform evalutation on the string as we need
 
 Algorithm:
-- check if valid phone number
-  - Check for invalid characters
-    - anything but digtits, space, dot and parenthisis are considered invalid
-      - return '000000000'
+INVALID = '0000000000'
+
+  - Clean up number
   - Check for length
-    - if phonenumber.length > 11 || phonenumber.length < 10 || phonenumber.length === 11 && firstDigtit !== 1
-      - return '000000000'
-- Extrapolate digits
-  - Regex match
+    - if phonenumber.length > 11 || phonenumber.length < 10
+      - return INVALID
+
+    - if phonenumber.length === 11
+      - if firstDigtit === 1
+        - return cleaned up number
+      - else
+        - return INVALID;
 
 - Return cleaned up phone number
 */ 
 
-function invalidPhoneNumber(number) {
-  let digits = number.match(/\d/g).join('');
-  return /[^\d. \-()]/.test(number) ||
-         digits.length > 11 ||
-         digits.length < 10 ||
-         digits.length === 11 && digits[0] !== '1';
-}
+// function invalidPhoneNumber(number) {
+//   let invalidCharacters = /[^\d. \-()]/;
+//   let digits = number.match(/\d/g);
+
+//   return digits === null ||
+//          invalidCharacters.test(number) ||
+//          digits.length > 11 ||
+//          digits.length < 10 ||
+//          digits.length === 11 && digits[0] !== '1';
+// }
+
+const DEFAULT = '0'.repeat(10);
 
 function cleanPhoneNumber(number) {
-  if (invalidPhoneNumber(number)) return '0000000000';
-  let digits = number.match(/\d/g);
-  if (digits.length === 11) digits.shift();
-  return digits.join('');
+  cleanedNumber = number.replace(/\D/g, '');
+  length = cleanedNumber.length;
+  
+  if (length > 11 || length < 10) {
+    return DEFAULT
+  }
+
+  if (length === 11) {
+    if (cleanedNumber[0] === '1') {
+      return cleanedNumber.slice(1);
+    } else
+    return DEFAULT
+  }
+  
+  return cleanedNumber;
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
+// 10 digit
 console.log(cleanPhoneNumber('0123456789')) //=> '0123456789'
+// 10 digit containing dash, space and parenthesis
 console.log(cleanPhoneNumber('01-23 45.67(89)')) //=> '0123456789'
+// 10 digit only containing dashes
 console.log(cleanPhoneNumber('01-23-45-67-89')) //=> '0123456789'
+// 10 digit only containing parenthisis
 console.log(cleanPhoneNumber('(01)23456789')) //=> '0123456789'
+// 11 digit, but first digit is 1
 console.log(cleanPhoneNumber('10123456789')) //=> '0123456789'
+// 11 digit, but first digit is 1 and contains dash, space and parenthisis
+console.log(cleanPhoneNumber('-101 234(56789)')) //=> '0123456789'
+// 11 digit, but first digit is not 1
 console.log(cleanPhoneNumber('20123456789')) //=> '0000000000'
+// 12 digit
 console.log(cleanPhoneNumber('101234567899')) //=> '0000000000'
+// 9 digit
 console.log(cleanPhoneNumber('123456789')) //=> '0000000000'
-console.log(cleanPhoneNumber('101234@6789')) //=> '0000000000'
+// empty string
+console.log(cleanPhoneNumber('')) //=> '0000000000'
