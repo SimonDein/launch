@@ -41,11 +41,13 @@ An array of all words in the sentence.
 Map and join would be available to us and map the problem very well.
 
 Algorithm:
-Test for characters outside character set?
-Extract any words in the input string to list
-Traverse list and reverse words at odd index
-join words together with a single space
-append a single dot
+- Test for characters outside character set?
+  - return ERROR of sort? undefined, null, empty string?
+- Go over words, reverse words at odd index and append a dot
+  - Extract any words in the input string to list
+  - Traverse list and reverse words at odd index
+  - join words together with a single space
+  - append a single dot
 
 Code:
 Go nuts!
