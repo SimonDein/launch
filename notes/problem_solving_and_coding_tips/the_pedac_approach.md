@@ -24,19 +24,11 @@ At last - try to always tackle the hardest part of a problem first: write pseudo
 
 ###Understand the Problem
 
-  - Requirements are explicit
-    - Take notes
-    - The "odd words" problem
-  - Requirements are not so explicit and need to be modeled
-    - Examples need to be described in computational words
-    - "diamond of stars"
-  - Implicit knowledge needs to be captured
-    - Convert to explicit rules, in computational language
-    - "what century is that"
-  - Identifying and defining important terms and concepts
-    - "queen attack"
-    - Same row; same column; especially same diagonal
-  - Ask questions to verify your understanding!
+* Identify the expected input and output.
+* Next step is to identify the requirements and make them as explicit as possible.
+  * Describe implicit knowlegde and rules
+      * Identifying and defining important terms and concepts
+  * Ask questions to verify your understanding!
 
 
 
@@ -45,7 +37,7 @@ At last - try to always tackle the hardest part of a problem first: write pseudo
   - Test cases serve two purposes:
     - help you understand the problem
     - allow you to verify your solution
-  - Happy paths
+  - Happy path
     - combination of requirements; the "obvious" result
   - Edge cases
     - focus on input
@@ -57,13 +49,20 @@ At last - try to always tackle the hardest part of a problem first: write pseudo
   - Failures / Bad Input
     - raise exceptions / report errors
     - return a special value (nil/null, 0, "", [], etc.)
-  - ask questions to verify your understanding!
+  - Ask questions to verify your understanding!
 
 
 
 ###Data Structure
 
+What data structure(s) will give you the tools to solve the problem while staying as close as possible to the data you are given and want to output.
+
+
+
+#### Tools of the data structure
+
   - Input data
+
   - Rules/requirements as data
     - hash/object
 
@@ -87,6 +86,7 @@ At last - try to always tackle the hardest part of a problem first: write pseudo
     - Dumber
       - Math operations
       - Number as string may have advantage over numbers
+
   - Compound data structures
     - Array of arrays
     - Hash with array/object values, etc.
@@ -94,6 +94,16 @@ At last - try to always tackle the hardest part of a problem first: write pseudo
     
 
 ###Algorithm
+
+* Avoid solving big problems!
+  * Lay out the general steps of the algorithm without going into details
+    * Try to describe the algorithm in 1-2 sentences
+      * If you can't; raise you abstraction
+      * Push detailed steps into methods / functions
+        * Describe each step with more detail using appropriate language terms
+        * Stop when you have blue print of the algorithm
+
+#### Notes
 
   - Algorithms have to be described in the language of chosen data structure!
     - "then solve it" doesn't count
