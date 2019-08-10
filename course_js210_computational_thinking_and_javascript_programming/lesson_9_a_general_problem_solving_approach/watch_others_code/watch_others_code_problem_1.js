@@ -72,8 +72,8 @@ INVALID = '0000000000'
 const DEFAULT = '0'.repeat(10);
 
 function cleanPhoneNumber(number) {
-  cleanedNumber = number.replace(/\D/g, '');
-  length = cleanedNumber.length;
+  let cleanedNumber = number.replace(/\D/g, '');
+  let length = cleanedNumber.length;
   
   if (length > 11 || length < 10 || length === 11 && cleanedNumber[0] === '1') {
     return DEFAULT
