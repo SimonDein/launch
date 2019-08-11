@@ -113,7 +113,7 @@ function convertShortHandNumbers(shortHand) {
   let numbersInRange
   
   let rangesComputed = notations.map(function (notation) {
-    if (isNumber(notation)) {
+    if (isNumber(notation)) { // i.e. not a range
       return nextNumberEndingWithNumber(notation);
     } else {
       range = notation.match(/\d+/g);
