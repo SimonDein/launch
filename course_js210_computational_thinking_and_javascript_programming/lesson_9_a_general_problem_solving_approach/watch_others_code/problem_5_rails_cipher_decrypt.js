@@ -1,62 +1,33 @@
 /*
+Example:
+W . . . E . . . C . . . R . . . L . . . T . . . E   rail1
+. E . R . D . S . O . E . E . F . E . A . O . C .   rail2
+. . A . . . I . . . V . . . D . . . E . . . N . .   rail3
+
+Each rail is concatenated together:
+rail1 + rail2 + rail3 => 'WECRLTEERDSOEEFEAOCAIVDEN'
+
+----- PEDAC -----
+Examples:$
+console.log(railFenceCipherDecrypt('WECRLTEERDSOEEFEAOCA$IVDEN')); // => WEAREDISCOVEREDFLEEATONCE$
+console.log(railFenceCipherDecrypt('WEER')); // => WERE$$
+console.log(railFenceCipherDecrypt('TKRNU')); // =$> TRUNK$
+console.log(railFenceCipherDecrypt('T')); $// => T$
+console.log(railFenceCipherDecrypt('TkRNu$')); // => TRUNK
+
+DataStructure:
+  - Arrays
+    - fits structure of having "rails" of characters
+    - mutable, could work when we need to read off each rail in a zig zag
+
+  - String for output
+
 Algorithm:
   Decoding:
   - rails = [[], [], []] each representing a rail
   - fill rails
-    - railIndex = 0
-    - increment = 1
-    - inputString.split('').forEach(char)
-      - rail[railIndex].push(char)
-      - railIndex += increment
-      - if (railIndex % 3 === 0)
-        - railIndex = -increment
-        
-        - add char
-        - if (railIndex === 0 || railIndex % 2 === 0)
-         - railIndex = -increment
-        - railIndex += increment
-
-  Index for rail1: 0, 4, 8, 12 etc
-
-  W . . . E chipher.length = 
-  . E . R .  => rail1.length = 2, rail2.length = 2, rail3.length = 1;
-  . . A . .
-
-  W . . . E . . . C . . . R . . . L . . . T . . . E
-  . E . R . D . S . O . E . E . F . E . A . O . C .
-  . . A . . . I . . . V . . . D . . . E . . . N . .
-
-// Math.floor((cipher.length - 1) / 4) + 1
-
-cipher: 'WECRLTEERDSOEEFEAOCAIVDEN'
-
-  - rails = []
-  - fill rails
-    - rail
-
-*/
-
-// function zigZagArrayFor(array, callback, end) {
-//   // array = array.slice();
-
-//   let turnThreshold = array.length - 1 //=> 2
-//   let thresholdTracker = -1; // we don't get
-//   let arrayIndex = 0;
-//   let increment = 1;
-  
-//   for(let start = 0; start < end; start += 1) {
-//     callback(array[arrayIndex], arrayIndex, array); 
-//     thresholdTracker += 1;
-
-//     if (thresholdTracker === turnThreshold) {
-//       thresholdTracker = 0;
-//       increment = -increment;
-//       arrayIndex += increment;
-//       continue;
-//     } 
-//     arrayIndex += increment;
-//   }
-// }
+  - read of each rail
+  */
 
 function zigZagFor(end, callback, width = 3) {
   let turnThreshold = width - 1;
@@ -114,7 +85,11 @@ function railFenceCipherDecrypt(cipher) {
   let railCharacters = getRailCharacters(railLengths, cipher);
   let decipher = readRails(railCharacters);
 
-  return decipher
+  return decipher.toUpperCase()
 }
 
-console.log(railFenceCipherDecrypt('WECRLTEERDSOEEFEAOCAIVDEN'));
+console.log(railFenceCipherDecrypt('WECRLTEERDSOEEFEAOCAIVDEN')); // => WEAREDISCOVEREDFLEEATONCE
+console.log(railFenceCipherDecrypt('WEER')); // => WERE
+console.log(railFenceCipherDecrypt('TKRNU')); // => TRUNK
+console.log(railFenceCipherDecrypt('T')); // => T
+console.log(railFenceCipherDecrypt('TkRNu')); // => TRUNK
