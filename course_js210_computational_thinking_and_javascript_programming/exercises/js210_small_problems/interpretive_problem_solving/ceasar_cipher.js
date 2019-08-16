@@ -32,7 +32,7 @@ Algorithm:
 */
 const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
 
-function caesarEncrypt(message, shiftKey) {
+function ceasarEncrypt(message, shiftKey) {
   function shiftLetter(match) {
     return getShiftLetter(match, shiftKey);
   }
@@ -41,21 +41,21 @@ function caesarEncrypt(message, shiftKey) {
 }
 
 // simple shift
-console.log(caesarEncrypt('A', 0));       // "A"
-console.log(caesarEncrypt('A', 3));       // "D"
+console.log(ceasarEncrypt('A', 0));       // "A"
+console.log(ceasarEncrypt('A', 3));       // "D"
 
 // wrap around
-console.log(caesarEncrypt('y', 5));       // "d"
-console.log(caesarEncrypt('a', 47));      // "v"
+console.log(ceasarEncrypt('y', 5));       // "d"
+console.log(ceasarEncrypt('a', 47));      // "v"
 
 // all letters
-console.log(caesarEncrypt('ABCDEFGHIJKLMNOPQRSTUVWXYZ', 25));
+console.log(ceasarEncrypt('ABCDEFGHIJKLMNOPQRSTUVWXYZ', 25));
 // "ZABCDEFGHIJKLMNOPQRSTUVWXY"
-console.log(caesarEncrypt('The quick brown fox jumps over the lazy dog!', 5));
+console.log(ceasarEncrypt('The quick brown fox jumps over the lazy dog!', 5));
 // "Ymj vznhp gwtbs ktc ozrux tajw ymj qfed itl!"
 
 // many non-letters
-console.log(caesarEncrypt('There are, as you can see, many punctuations. Right?; Wrong?', 2));
+console.log(ceasarEncrypt('There are, as you can see, many punctuations. Right?; Wrong?', 2));
 // "Vjgtg ctg, cu aqw ecp ugg, ocpa rwpevwcvkqpu. Tkijv?; Ytqpi?"
 
 
