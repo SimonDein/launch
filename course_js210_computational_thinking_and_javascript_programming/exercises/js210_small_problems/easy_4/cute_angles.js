@@ -31,10 +31,21 @@ const MINUTES_PER_DEGREE = 60;
 const SECONDS_PER_MINUTE = 60;
 
 function dms(angle) {
-  let degrees = angle;
-  let minutes = MINUTES_PER_DEGREE * (angle % 1);
-  let seconds = SECONDS_PER_MINUTE * (minutes % 1);
-  return `${Math.floor(degrees)}°${Math.floor(minutes).toPrecision(2)}'${Math.floor(seconds).toPrecision(2)}"`
+  let degrees = Math.floor(angle);
+  let minutes = Math.floor(MINUTES_PER_DEGREE * (angle % 1));
+  let seconds = Math.floor(SECONDS_PER_MINUTE * (minutes % 1));
+
+  minutesPadded = leftPadToLength(minutes, '0', 2);
+  secondsPadded = leftPadToLength(seconds, '0', 2);
+
+  return `${degrees}°${minutesPadded}'${secondsPadded}"`
+}
+
+function leftPadToLength(number, padding, totalLength) {
+  let numberString = String(number)
+  let numberLength = numberString.length;
+  if (numberLength >= 2) return number;
+  return padding.repeat(totalLength - numberLength) + numberString;
 }
 
 
