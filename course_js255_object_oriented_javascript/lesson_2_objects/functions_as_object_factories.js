@@ -12,6 +12,6 @@ let makeCar = function(speedRate) {
   return car;
 };
 
-let sedan = makeCar(20);
-let coupe = makeCar(40);
+let sedan = makeCar(20); // { speed: 0, speedRate: 20, accelerate: [Function: accelerate] }
+let coupe = makeCar(40); // { speed: 0, speedRate: 40, accelerate: [Function: accelerate] }
 
