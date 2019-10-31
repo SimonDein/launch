@@ -2,6 +2,7 @@
 
 function countDown(start) {
   (function recursiveSubtract(n) {
+    let accountNumber = 2;
     console.log(n);
     if (n <= 0) console.log('Done!');
     else recursiveSubtract(n - 1);
