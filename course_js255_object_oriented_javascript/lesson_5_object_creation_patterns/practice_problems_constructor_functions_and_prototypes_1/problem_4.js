@@ -7,13 +7,11 @@ function Ninja() {
 
 ninja = new Ninja();
 
-Ninja.prototype = {
-  swingSword: function() {
-    return this.swung;
-  },
+Ninja.prototype.swingSword = function() {
+  return this.swung;
 };
 
 console.log(ninja.swingSword());
-// This will throw a TypeError.
-// This is because when we created the instance from the Ninja constructor class the method swingSword was not defined on it's prototype.
-// We reassign the Ninja.prototype object after the creation, and the prototype of ninja is now different from the prototype defined in Ninja.prototype.
+// This will log 'true'.
+// We add the method on the prototype from which our instance "inherits"
+// from. So the method is on it's chain of prototypes for resolving properties.
