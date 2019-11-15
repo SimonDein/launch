@@ -1,141 +1,79 @@
+
 # HTTP
 
-> **H**yper**t**ext **T**ransfer **P**rotocol
->
-> HTTP is the standardized protocol used to transmit data over the world wide web.
->
+The _Hypertext Transfer Protocol_ (HTTP) is a text-based application-level protocol. It regulates the communication between a _server_ (an application) and a _client_ (e.g. a browser). HTTP communication is based on a request/response cycle: The client sends a request, and the server responds to that request.
 
-It's a protocol, a set of rules, for a request-response between a clientt and a server.
+## Requests
 
-###Overview
+Requests consist of:
+* a request method (e.g. GET, POST)
+* a path
+* a protocol (e.g. HTTP/1.1)
+* headers (key-value pairs of form `key: value`, meta data containing supplemental information about the client that sends the request or the resource it requests)
+* a body
 
-The internet is at the end of the day just computers connected to one another. When yours enter an URL into the adress bar in your browser - your computer (or rather - browser) will act as the **client** sending a *request*  to another computer acting as a **server**. The server will look at the request and, process it and then send a *response* back to the client (your computer).
+In HTTP/1.1, required are the request method, the path, as well as the `Host` header.
 
-**HTTP sets the rules for *how*** a device should send a request, and for *h*ow a response should be sent back. It's basically an agreement on a set of rules of how machines communicate with each other.
-
-The operation taking place is called a **"request-response cycle"**.
-
-**In the beginning the HTTP protocol returned *only* html document**, but has since evolved into something bigger, returning images, videos and css, html and javascript documents etc.
-
-
-
-## HTTP Request
-
-HTTP is strictly a **text-based protocol** (Meaning requests and responses can be read by humans)
-
-A request must contain certain details - while others are optional.
-
-A request can have three sections. Where the first two are obligatory:
-
-1. The first line contains the request method followed by it's parameters:
-
-```text
-GET /about HTTP/1.1 (method, path or domain name, http protocol version)
-```
-
-2. The subsequent lines represent a HTTP header, giving the server information about what type of data is appropriate (eg. language, type of document etc.). These HTTP headers form a block and ends with an empty line:
-
-```text
-Host: developer.mozilla.org
-Accept-Language: fr
- 
-```
-
-3. The final block is an optional data block, which usually is used by the `POST` method to send user input from fx. a form to the server. This data block is usually used to send sensitive data not appropritate for sending directly in the URL as it can easily be read(though it also can be easily read from the data block!):
-
-```text
-user_name=JohnDoe&password=letmein
-```
-
-
-
-*An example of a http request **without** the optional data block:*
-
-```text
-GET / HTTP/1.1			 	<- 1st block: Method, path, http protocol version
-Host: developer.mozilla.org <- 2nd block: Headers (must contain 'host' since http 1.1)
-Accept-Language: fr			<- More headers
-                          	<- extra empty line tells the server that this is the end of 								the headers block. Anything after this would be in the 3rd 								  block - the data block.
-```
-
-*And example of a http request **with** all three blocks:*
-
-```text
-GET / HTTP/1.1			 	  <- 1st block: Method, path, http protocol version
-Host: developer.mozilla.org   <- 2nd block: Headers (must contain 'host' since http 1.1)
-Accept-Language: fr
-                          	  <- Empty line separates headers block from th data block.
-name=JohnDoe&password=letmein <- 3rd block: data send to the server (usually from a form)
-```
-
-
-
-* Implicitly contains the protocol (fx. HTTP/1.1.)
-
-
-* Must consist of the **host** (since HTTP 1.1), a **path** and **method**
-  * Host consist of the domain name (google.com)
-  * Path is the path the file requested (…/index.html)
-  * Method is the method by which we want to connect with the server (GET / POST / DELETE etc.)
-* Can **also** consist of **parameters**, **header** and a **body**
-
-### Request Methods
+### Request methods
 
 The method specifies the kind of request that is sent.
 
-- **GET** requests are used for retrieving data, e.g. asking for the representation of a specified resource. They are restricted with respect to length and data type (ASCII character set).
-- **POST** requests are used for submitting data to the server (as part of the request body), and for initializing an action on the server, such as updating an existing resource or creating a new one. They are not restricted with respect to length and data type.
-- **HEAD** only asks for the header of a response, e.g. for checking the response status code without actually transferring the resource, in order to check whether the resource exists or has been modified or moved. This can be relevant for caching purposes.
+* **GET** requests are used for retrieving data, e.g. asking for the representation of a specified resource. They are restricted with respect to length and data type (ASCII character set).  
+* **POST** requests are used for submitting data to the server (as part of the request body), and for initializing an action on the server, such as updating an existing resource or creating a new one. They are not restricted with respect to length and data type.
+* **HEAD** only asks for the header of a response, e.g. for checking the response status code without actually transferring the resource, in order to check whether the resource exists or has been modified or moved. This can be relevant for caching purposes.  
 
-A request is *safe* if it does not request any action besides the retrieval of data. E.g. GET, HEAD. Not POST, PUT, DELETE.
+A request is _safe_ if it does not request any action besides the retrieval of data. E.g. GET, HEAD. Not POST, PUT, DELETE.
 
-A request is *idempotent* if the result is the same no matter how often it is executed (aside from errors or expiration effects). E.g. GET, HEAD, DELETE. Not POST.
+A request is _idempotent_ if the result is the same no matter how often it is executed (aside from errors or expiration effects). E.g. GET, HEAD, DELETE. Not POST.
 
 ### Examples
 
 ```
-GET /about/authors HTTP/1.1 (method, path and protocol)
+GET /about HTTP/1.1
 -------------------
-Host: example.com (header section)
+Host: example.com
 User-Agent: ...
 -------------------
 ```
 
 In case of a POST request sending data to the server, this data is sent as the request body:
-
 ```
-POST /user HTTP/1.1	(method, path and protocol)
+POST /user HTTP/1.1
 -------------------
-Host: example.com	(header section)
+Host: example.com
 User-Agent: ...
 -------------------
-first_name=alice&action=update (body - data sent to the server will be here)
+first_name=alice&action=update
 ```
-
-
 
 ## Responses
 
-The server validates the response, retrieves the data (if valid request) and sends a response by either sending the requesting resource or a response indicating an initialized action or error that occurred.
+The server responds to the request, either by transferring the requested resource or information, or by indicating the result of an initialized action or the kind of problem that occurred.
 
-* Implicitly contains the protocol (fx. HTTP/1.1)
+* a protocol (e.g. HTTP/1.1)
+* a status code
+* headers (key-value pairs of form `key: value`, meta data containing information useful for the client, e.g. about the data being sent or the server)
+* a body containing the raw response data (e.g. an HTML document or binary data of an image)
 
+Required is the status, all other parts are optional.
 
-* A response **must** include a **status**
-* May also include **headers** or a **body**
+Usually a browser issues several requests when pointed to a URL, e.g. requesting resources required to display an HTML page (images, stylesheets, scripts, etc) and following redirects.
 
 ### Example
 
-```txt
-HTTP/1.x 200 OK (protcol and status code)
---------------- (Header section)
+```
+HTTP/1.x 200 OK
+---------------
 Last-Modified: ...
 ---------------
+<html>
+...
+</html>
 ```
 
 ```
-HTTP/1.x 303 See other (protocol and status code)
---------------- (header section)
+HTTP/1.x 303 See other
+---------------
 Location: ...
 ---------------
 ```
@@ -146,14 +84,14 @@ Location: ...
 
 #### 200s: Successful
 
-- `200` Ok
-- `204` Success, no content
+* `200` Ok
+* `204` Success, no content
 
 #### 300s: Redirections
 
-- `301` Moved permanently (future requests should use new URL)
-- `302` Moved temporarily (future requests should use old URL)
-- `303` See other
+* `301` Moved permanently (future requests should use new URL)
+* `302` Moved temporarily (future requests should use old URL)
+* `303` See other
 
 Redirects provide the new URL as HTTP header `Location`.
 
@@ -163,83 +101,80 @@ Redirects provide the new URL as HTTP header `Location`.
 
 #### 400s: Client error (problem with request)
 
-- `400` Bad request (i.e. malformed)
-- `401` Unauthorized (i.e. client needs to authenticate before having access to the resource)
-- `403` Forbidden
-- `404` Requested resource was not found
-- `408` Request timeout
-- `410` Gone (similar to `404`, but saying that the resource used to be there but was removed)
+* `400` Bad request (i.e. malformed)
+* `401` Unauthorized (i.e. client needs to authenticate before having access to the resource)
+* `403` Forbidden
+* `404` Requested resource was not found
+* `408` Request timeout
+* `410` Gone (similar to `404`, but saying that the resource used to be there but was removed)
 
 #### 500s: Server error
 
-- `500` Internal server error
-- `501` Not implemented (e.g. if a particular HTTP method is not supported)
-- `505` HTTP version not supported
-
-
+* `500` Internal server error
+* `501` Not implemented (e.g. if a particular HTTP method is not supported)
+* `505` HTTP version not supported
 
 ## URLs
 
-> A Uniform Resource Identifier (URI) is a compact string of characters for identifying an abstract or physical resource. -- <https://www.ietf.org/rfc/rfc2396.txt>
+> A Uniform Resource Identifier (URI) is a compact string of characters for identifying an abstract or physical resource.
+> -- https://www.ietf.org/rfc/rfc2396.txt
 
 ```
 url = scheme "://" host [ ":" port ] [ path [ "#" anchor ] [ "?" query ]]
 ```
 
-The `scheme` specifies a protocol, telling how the resource can be accessed, e.g. `http`, `https`, `ftp`, `mailto`, `git`.
+The `scheme` specifies a protocol, telling how the resource can be accessed, e.g. `http`, `https`, `ftp`, `mailto`, `git`.  
 
 The `host` is either a hostname (e.g. `example.com`) or an IP address.
 
 **Example:**
-
 ```
 https://example.com:3000/character?first_name=elaine&last_name=marley
 ```
 
 Default `port`s:
+* `80` for HTTP
+* `443` for HTTPS
 
-- `80` for HTTP
-- `443` for HTTPS
-
-The allowed characters in a URL are a subset of the ASCII character set. ASCII characters not in this set (*unsafe*, e.g. `%`) as well as reserved characters (`;`, `/`, `?`, `:`, `@`, `&`, `=`, `+`, `$`, `,`) need to be encoded as `%xx` where `xx` are two hexadecimal digits representing the ASCII code of the character (e.g. `%20` for space).
-
-
+The allowed characters in a URL are a subset of the ASCII character set. ASCII characters not in this set (_unsafe_, e.g. `%`) as well as reserved characters (`;`, `/`, `?`, `:`, `@`, `&`, `=`, `+`, `$`, `,`) need to be encoded as `%xx` where `xx` are two hexadecimal digits representing the ASCII code of the character (e.g. `%20` for space).
 
 ## HTTP communication
 
 1. The **client**
-
-- extracts the host name from the URL
-- gets the IP address for that host name (from a DNS - Domain Name Server)
-- gets the port number (either specified in URL or the default - port `80`)
-
-1. The **client** opens a TCP/IP connection to the IP address with the port
-2. The **client** sends an HTTP request to the **server**
-3. The **server**
-
-- processes the request
-- accesses the required resources
-- composes and sends an HTTP response
-- usually also logs the transaction
-
-1. The **client** receives the response and processes and displays the data accordingly
-2. The client or server closes the connection
+* extracts the host name from the URL
+* gets the IP address for that host name (using DNS)
+* gets the port number (either specified in URL or default one)
+2. The **client** opens a TCP/IP connection to the IP address with the port
+3. The **client** sends an HTTP request to the **server**
+4. The **server**
+* processes the request
+* accesses the required resources
+* composes and sends an HTTP response
+* usually also logs the transaction
+5. The **client** receives the response and processes and displays the data accordingly
+6. The client or server closes the connection
 
 HTTP also allows for a chain of HTTP intermediaries between client and server (proxies, caches, etc).
 
+## cURL
 
-
-## IP
-
-The internet consist of millions of interconnected devices. By convention, all devices that participate in a network are *provided* with a **unique adress**. This adress is called an IP Address - an **I**nternet **P**rotocol Address, and can easily be compared to a phone number.
-
-Furthermore an IP Address have **port numbers**, that add more detail about how to communicate.
-
-IP Addresses are represented by 4 numbers seperated by a dot:
-
-```ruby
-192.168.0.1 # No port number
-192.168.0.1:1234 # With a port number (1234)
+```
+curl http://localhost:3000
 ```
 
-For a device to access the wider internet, it should have a public IP address provided by an **I**nternet **S**ervice **P**rovider - much like you would want to have your phone number made public in a phone book for others to be able to contact you back in the day.
+```
+curl -X GET "http://localhost:3000/books" -v -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0"
+```
+
+`-A` for User-Agent
+`-H` for headers
+
+```
+curl -X POST "http://localhost:3000/login" -d "username=guybrush" -d "password=APirateIWasMeantToBe" -v
+```
+
+`-d` results in the data being POST-ed as an `application/x-www-form-urlencoded` string.
+
+## AJAX
+
+_Asynchronous JavaScript and XML_ (AJAX) is used for displaying dynamic content, in particular issuing requests and processing responses without full page refreshes. When triggering a request, the response is handled by a callback (usually a client-side JS function), which then, e.g., updates the HTML page (by directly changing the DOM tree).    
