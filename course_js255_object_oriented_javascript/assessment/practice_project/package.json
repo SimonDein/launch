@@ -1,0 +1,15 @@
+{
+  "name": "practice_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "my_utility_library.js",
+  "dependencies": {
+    "jest": "^24.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
