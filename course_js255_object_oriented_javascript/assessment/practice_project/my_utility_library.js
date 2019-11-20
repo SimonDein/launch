@@ -48,7 +48,7 @@ let _ = function(obj) {
     lastIndexOf: function(value) {
       let i = obj.length - 1;
       for(; i >= 0; i -= 1) {
-        if (obj[i] === value || Number.isNaN(value) && Number.isNaN(value)) {
+        if (obj[i] === value || Number.isNaN(value) && Number.isNaN(obj[i])) {
           return i;
         };
       }

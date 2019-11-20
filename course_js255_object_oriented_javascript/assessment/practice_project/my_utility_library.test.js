@@ -87,7 +87,7 @@ describe('_([]).lastIndexOf', () => {
   });
 
   test('returns last index of NaN', () => {
-    expect(_([NaN, 2, NaN, 'NaN']).lastIndexOf(NaN)).toBe(3);
+    expect(_([NaN, 2, NaN, 'NaN']).lastIndexOf(NaN)).toBe(2);
   });
 
   test('returns -1 when no match', () => {
