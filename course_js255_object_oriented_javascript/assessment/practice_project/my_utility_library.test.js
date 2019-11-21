@@ -1,5 +1,9 @@
 let _ = require('./my_utility_library.js');
 
+
+
+
+// =========== UNIT TESTS ============
 describe('_()', () => {
   test('_ library is defined', () => {
     expect(_).toEqual(expect.anything());
@@ -13,6 +17,10 @@ describe('_()', () => {
     test('returns the first element of the array', () => {
       expect(_([5, 6, 7, undefined, null]).first()).toBe(5);
     });
+
+    test('returns empty array when empty', () => {
+      expect(_([]).first()).toEqual([]);
+    });
   });
 
   describe('.last', () => {
@@ -22,6 +30,10 @@ describe('_()', () => {
 
     test('returns the last element of the array', () => {
       expect(_([5, 6, 10, undefined, 8]).last()).toBe(8);
+    });
+
+    test('returns empty array when empty', () => {
+      expect(_([]).last()).toEqual([]);
     });
   });
 

@@ -3,11 +3,13 @@ let _ = function(obj) {
     // ==== Array methods to create: ====
     // first, return the first element in an array.
     first: function() {
+      if (obj.length <= 0) return [];
       return obj[0];
     },
 
     // last, return the last element in an array.
     last: function() {
+      if (obj.length <= 0) return [];
       return obj[obj.length - 1];
     },
 
@@ -55,6 +57,9 @@ let _ = function(obj) {
       return -1;
     },
 // sample, return a single value from an array when no argument is supplied. Return an array of multiple, non-repeated elements when a quantity is supplied.
+    sample: function(quantity) {
+      if (quantity === undefined) return obj[0];
+    },
   };
 }
 
