@@ -10,7 +10,7 @@ function todoManager(todoList) {
     },
 
     getTodosWithin(month, year) {
-      return this.getTodos().filter((todo) => todo.month === month && todo.year === year);
+      return this.getTodos().filter((todo) => todo.isWithinMonthYear(month, year));
     },
 
     getCompletedTodosWithin(month, year) {
