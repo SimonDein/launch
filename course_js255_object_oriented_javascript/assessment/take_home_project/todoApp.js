@@ -1,4 +1,10 @@
+'use strict';
+// Questions
+// - getTodos in todoManager?
+// - deep copy with access to isWithinMonthYear
+
 // todoManager wrapper function
+
 function todoManager(todoList) {
   return {
     getTodos: function() {
@@ -6,7 +12,7 @@ function todoManager(todoList) {
     },
 
     getCompletedTodos: function() {
-      return this.getTodos().filter((todo) => todo.completed === true);
+      return this.getTodos().filter((todo) => todo.completed);
     },
 
     getTodosWithin(month, year) {
@@ -15,33 +21,66 @@ function todoManager(todoList) {
 
     getCompletedTodosWithin(month, year) {
       return this.getTodos().filter((todo) => {
-        todo.month === month &&
-        todo.year === year &&
-        todo.completed === true;
-      })
+        return todo.isWithinMonthYear(month, year) &&
+               todo.completed;
+      });
     }
-  }
+  };
 }
 
+let Todo = (function() {
+  let id = 0;
 
-// TodoList object (OLOO)
+  function getNextId() {
+    return id += 1;
+  }
+
+  return function(todoData) {
+    this.title = todoData.title || '';
+    this.month = todoData.month || '';
+    this.year = todoData.year || '';
+    this.description = todoData.description || '';
+    this.id = getNextId();
+    this.completed = false;
+  };
+})();
+
+Todo.prototype.isWithinMonthYear = function(month, year) {
+  return this.month === month && this.year === year;
+};
+
+
+// TODO
+// - only return copies of todos!
 function TodoList(todoDataSet) {
-  let todos = [];
+  const todos = [];
+
+  function copyTodo(todo) {
+    let copy = Object.assign({}, todo);
+    Object.setPrototypeOf(copy, Object.getPrototypeOf(todo));
+    return copy;
+  }
 
   if (todoDataSet !== undefined) {
-    todoDataSet.forEach((todoData) => todos.push(makeTodo(todoDataSet)));
-  };
+    todoDataSet.forEach((todoData) => todos.push(new Todo(todoData)));
+  }
 
   this.getTodos = function() {
-    return todos.slice();
+    return todos.reduce((todosCopy, todo) => {
+      todosCopy.push(copyTodo(todo));
+      return todosCopy;
+    }, []);
   };
 
   this.addTodo = function(todoData) {
-    todos.push(makeTodo(todoData));
+    todos.push(new Todo(todoData));
   };
 
-  this.deleteTodo = function(todo) {
-    let index = todos.findIndex((t) => t.id === Number(todo.id));
+  this.deleteTodoById = function(id) {
+    let index = todos.findIndex((todo) => todo.id === id);
+
+    if (index < 0) return undefined;
+
     let deletedTodo = todos[index];
     todos.splice(index, 1);
 
@@ -50,81 +89,21 @@ function TodoList(todoDataSet) {
 
   this.updateTodo = function(updatedTodo) {
     let id = updatedTodo.id;
-    let outdatedTodo = this.getTodoById(id);
+    let index = todos.findIndex((todo) => todo.id === id);
+    let outdatedTodo = todos[index];
 
-    Object.keys(updatedTodo).forEach((key) => {
-      Object.defineProperty(outdatedTodo, key, {
-        value: updatedTodo[key],
-        writable: false,
-        configurable: true,
-      })
-    });
-    //Object.defineProperties(outdatedTodo, updatedTodo);
+    Object.assign(outdatedTodo, updatedTodo);
   };
 
   this.getTodoById = function(id) {
-    let index = todos.findIndex((todo) => todo.id === id)
-    return todos[index];
+    let index = todos.findIndex((todo) => todo.id === id);
+    if (index < 0) return undefined;
+    return copyTodo(todos[index]);
   };
 }
 
-
-// makeTodo 'object factory' (based on OLOO)
-let makeTodo = (function() {
-  let id = 0;
-
-  function getNextId() {
-    return id += 1;
-  };
-
-  let todo = {
-    isWithinMonthYear: function(month, year) {
-      return this.month === month && this.year === year;
-    },
-  }
-
-  return function(todoData) {
-    let newTodo = Object.create(todo);
-
-    Object.defineProperties(newTodo, {
-      title: {
-        value:  todoData.title || '',
-        writable: false,
-        configurable: true,
-      },
-      month: {
-        value:  todoData.month || '',
-        writable: false,
-        configurable: true,
-      },
-      year: {
-        value:  todoData.year || '',
-        writable: false,
-        configurable: true,
-      },
-      description: {
-        value:  todoData.description || '',
-        writable: false,
-        configurable: true,
-      },
-      completed: {
-        value:  false,
-        writable: false,
-        configurable: true,
-      },
-      id: {
-        value:  getNextId(),
-        writable: false,
-        configurable: true,
-      },
-    });
-
-    return newTodo;
-  };
-})();
-
 module.exports = {
-  makeTodo: makeTodo,
+  Todo: Todo,
   TodoList: TodoList,
   todoManager: todoManager,
 };
