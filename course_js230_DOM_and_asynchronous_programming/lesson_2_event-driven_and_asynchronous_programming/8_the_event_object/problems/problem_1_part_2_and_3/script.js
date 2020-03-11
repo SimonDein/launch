@@ -15,22 +15,12 @@ document.addEventListener('DOMContentLoaded', (_) => {
   document.addEventListener('keydown', function(event) {
     let key = event.key;
     
-    if (key === 'b') xChildren.forEach(setBackgroundColorBlue);
-    if (key === 'r') xChildren.forEach(setBackgroundColorRed);
-    if (key === 'g') xChildren.forEach(setBackgroundColorGreen);
+    if (key === 'b') xChildren.forEach(el => setBackgroundColor(el, 'blue'));
+    if (key === 'r') xChildren.forEach(el => setBackgroundColor(el, 'red'));
+    if (key === 'g') xChildren.forEach(el => setBackgroundColor(el, 'green'));
   })
 })
 
-function setBackgroundColorRed(element) {
-  SetbackgroundColor(element, 'red');
-}
-function setBackgroundColorBlue(element) {
-  SetbackgroundColor(element, 'blue');
-}
-function setBackgroundColorGreen(element) {
-  SetbackgroundColor(element, 'green');
-}
-
-function SetbackgroundColor(element, color) {
+function setBackgroundColor(element, color) {
   element.style.backgroundColor = color;
 }
