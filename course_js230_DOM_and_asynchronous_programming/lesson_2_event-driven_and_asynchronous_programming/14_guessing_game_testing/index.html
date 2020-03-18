@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Guessing Game</title>
+</head>
+
+<body>
+  <h1>Guess the number</h1>
+  <div class="tile">
+    <form class="settings-grid" action="#">
+      <label class="message">What numbers do you want to guess from and to?</label>
+      <input min='0' max='100000' autocomplete="off" class="start-num" type="number">
+      <input min='0' max='100000' autocomplete="off" class="end-num" type="number">
+      <button class="submit-btn" type="submit">Choose</button>
+    </form>
+  </div>
+  
+  <template>
+    <form class="game-grid" action="#">
+      <label for="guess" class="message">Loading...</label>
+      <input min='0' max='100' autocomplete="off" id="guess" type="number">
+      <button class="guess-btn" type="submit">Guess</button>
+      <button class="reset-btn" type="reset">New Game</button>
+    </form>
+  </template>
+</body>
+
+</html>
